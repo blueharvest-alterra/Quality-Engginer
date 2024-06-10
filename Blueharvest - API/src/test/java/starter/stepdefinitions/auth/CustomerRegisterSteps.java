@@ -23,6 +23,11 @@ public class CustomerRegisterSteps {
         register.sendRegisterRequestWithValidData();
     }
 
+    @When("I send a POST request to register a new user with Duplicate data")
+    public void sendPostRequestToRegisterNewUserWithDuplicateData() {
+        register.sendPostRequestToRegisterNewUserWithDuplicateData();
+    }
+
     @When("I send a POST request to register a new user with invalid data")
     public void sendPostRequestToRegisterNewUserWithInalidData() {
         register.sendRegisterRequestWithInvalidData();

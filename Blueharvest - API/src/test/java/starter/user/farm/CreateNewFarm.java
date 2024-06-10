@@ -4,6 +4,9 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
+
+import java.io.File;
+
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -16,41 +19,54 @@ public class CreateNewFarm {
         return correctUrl;
     }
 
-    @Step("I set the wrong API endpoint for creating a new farm")
+    @Step("I set an invalid API endpoint for creating a new farm")
     public String setWrongApiEndpoint() {
         return wrongUrl;
     }
 
-    @Step("I send a POST request with valid data to create a new farm")
+    @Step("I send a POST request with valid data")
     public void sendCreateFarmRequestWithValidData() {
+        // Create JSON part
         JSONObject requestBody = new JSONObject();
         requestBody.put("title", "this test title");
         requestBody.put("description", "this test description");
 
+        // Load sample file
+        File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
+
+        // Send POST request with multipart form data
         SerenityRest.given()
-                .contentType("application/json")
-                .body(requestBody.toString())
+                .multiPart("title", "this test title")
+                .multiPart("description", "this test description")
+                .multiPart("picture_file", sampleFile)
                 .post(setApiEndpoint());
     }
 
-    @Step("I send a POST request with missing required fields to create a new farm")
+    @Step("I send a POST request with missing required fields")
     public void sendCreateFarmRequestWithMissingRequiredFields() {
         SerenityRest.given()
-                .contentType("application/json")
+                .multiPart("title", "")
+                .multiPart("description", "")
                 .post(setApiEndpoint())
                 .then()
                 .statusCode(400);  // Ensure we expect a 400 status code
     }
 
-    @Step("I send a POST request with valid data to create a new farm on invalid endpoint")
+    @Step("I send a POST request with valid data to invalid endpoint")
     public void sendCreateFarmRequestWithValidDataOnInvalidEndpoint() {
+        // Create JSON part
         JSONObject requestBody = new JSONObject();
         requestBody.put("title", "this test title");
         requestBody.put("description", "this test description");
 
+        // Load sample file
+        File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
+
+        // Send POST request with multipart form data to invalid endpoint
         SerenityRest.given()
-                .contentType("application/json")
-                .body(requestBody.toString())
+                .multiPart("title", "this test title")
+                .multiPart("description", "this test description")
+                .multiPart("picture_file", sampleFile)
                 .post(setWrongApiEndpoint())
                 .then()
                 .statusCode(404);  // Ensure we expect a 404 status code for invalid endpoint
@@ -60,13 +76,13 @@ public class CreateNewFarm {
     public void receiveValidFarmCreationData() {
         restAssuredThat(response -> response.body("status", equalTo(true)));
         restAssuredThat(response -> response.body("message", equalTo("Farm created!")));
-        restAssuredThat(response -> response.body("data.id", Matchers.notNullValue()));;  // Update with correct matchers as necessary
+        restAssuredThat(response -> response.body("data.id", Matchers.notNullValue()));  // Update with correct matchers as necessary
     }
 
     @Step("I receive an error message about missing fields")
     public void receiveErrorMessageAboutMissingFields() {
         restAssuredThat(response -> response.body("status", equalTo(false)));
-        restAssuredThat(response -> response.body("message", equalTo("Missing required fields")));
+        restAssuredThat(response -> response.body("message", equalTo("Gambar Farm Tidak Boleh Kosong")));
     }
 
     @Step("I receive an error message about invalid endpoint")

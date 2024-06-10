@@ -28,7 +28,7 @@ public class CustomerLogin {
     @Step("I send a POST request to login with valid data")
     public void sendLoginRequestWithValidData() {
         JSONObject requestBody = new JSONObject();
-        requestBody.put("email", "irvan-surya@blueharvest.com");
+        requestBody.put("email", "irvan-suriaaa2@blueharvest.com");
         requestBody.put("password", "123hore");
 
         SerenityRest.given()

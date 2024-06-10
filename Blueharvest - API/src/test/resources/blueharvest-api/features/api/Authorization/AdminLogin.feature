@@ -1,4 +1,3 @@
-@Ignore
 Feature: Admin Login
   As an admin user
   I want to log in to my account

@@ -1,4 +1,3 @@
-@Ignore
 Feature: Register
   As a user
   I want to register an account
@@ -13,7 +12,7 @@ Feature: Register
 
   Scenario: User failed to register account due to duplicate data
     Given I set API endpoint for user registration
-    When I send a POST request to register a new user with valid data
+    When I send a POST request to register a new user with Duplicate data
     Then I receive status code 400
 
   Scenario: User fails to register due to invalid endpoint

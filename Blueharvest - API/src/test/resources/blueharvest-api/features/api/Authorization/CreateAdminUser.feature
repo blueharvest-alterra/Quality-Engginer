@@ -1,4 +1,3 @@
-@Ignore
 Feature: Create Admin User
   As an administrator
   I want to create a new admin user

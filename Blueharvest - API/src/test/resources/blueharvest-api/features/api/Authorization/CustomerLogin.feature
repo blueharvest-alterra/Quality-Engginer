@@ -1,4 +1,3 @@
-@Ignore
 Feature: Customer Login
   As a user
   I want to log into my account

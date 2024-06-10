@@ -1,5 +1,6 @@
 package starter.user.auth;
 
+import com.github.javafaker.Faker;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
@@ -27,11 +28,21 @@ public class CreateAdminUser {
 
     @Step("I send a POST request to create admin user with valid data")
     public void sendCreateAdminUserRequestWithValidData() {
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("full_name", "Irvan");
-        requestBody.put("email", "irvan-surya-admin-4@blueharvest.com");
-        requestBody.put("password", "123hore");
+        // Create Faker object
+        Faker faker = new Faker();
 
+        // Generate fake data
+        String fullName = faker.name().fullName();
+        String email = faker.internet().safeEmailAddress(); // Gunakan safeEmailAddress untuk memastikan email yang unik
+        String password = faker.internet().password();
+
+        // Create request body with fake data
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("full_name", fullName);
+        requestBody.put("email", email);
+        requestBody.put("password", password);
+
+        // Send POST request with fake data
         SerenityRest.given()
                 .contentType("application/json")
                 .body(requestBody.toString())
@@ -72,9 +83,9 @@ public class CreateAdminUser {
         restAssuredThat(response -> response.body("status", equalTo(true)));
         restAssuredThat(response -> response.body("message", equalTo("Berhasil membuat user Admin!")));
         restAssuredThat(response -> response.body("data.id", Matchers.notNullValue()));
-        restAssuredThat(response -> response.body("data.full_name", equalTo("Irvan")));
+        restAssuredThat(response -> response.body("data.full_name", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.auth.id", Matchers.notNullValue()));
-        restAssuredThat(response -> response.body("data.auth.email", equalTo("irvan-surya-admin-4@blueharvest.com")));
+        restAssuredThat(response -> response.body("data.auth.email", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.created_at", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.updated_at", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.deleted_at", equalTo(null)));

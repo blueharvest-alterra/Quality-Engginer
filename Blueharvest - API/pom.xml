@@ -126,6 +126,7 @@
                         <include>**/*TestSuite.java</include>
                         <include>**/When*.java</include>
                         <include>**/stories/*.java</include>
+                        <include>**/RunCucumberTest.java</include>
                     </includes>
                     <systemPropertyVariables>
                     </systemPropertyVariables>

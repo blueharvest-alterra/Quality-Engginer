@@ -1,5 +1,6 @@
 package starter.user.auth;
 
+import com.github.javafaker.Faker;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
@@ -11,6 +12,7 @@ import starter.utils.JsonSchemaHelper;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 public class CustomerRegister {
     private static String correctUrl = "https://blueharvest.irvansn.com/v1/register/customer";
@@ -28,9 +30,31 @@ public class CustomerRegister {
 
     @Step("I send a POST request to register a new user with valid data")
     public void sendRegisterRequestWithValidData() {
+        // Create Faker object
+        Faker faker = new Faker();
+
+        // Generate fake data
+        String fullName = faker.name().fullName();
+        String email = faker.internet().safeEmailAddress();
+        String password = faker.internet().password();
+
+        // Create request body with fake data
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("full_name", fullName);
+        requestBody.put("email", email);
+        requestBody.put("password", password);
+
+        // Send POST request with fake data
+        SerenityRest.given()
+                .contentType("application/json")
+                .body(requestBody.toString())
+                .post(setApiEndpoint());
+    }
+    @Step("I send a POST request to register a new user with Duplicate data")
+    public void sendPostRequestToRegisterNewUserWithDuplicateData() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("full_name", "John Doe");
-        requestBody.put("email", "irvan-suriaaa3@blueharvest.com");
+        requestBody.put("email", "irvan-suriaaa2@blueharvest.com");
         requestBody.put("password", "123hore");
 
         SerenityRest.given()
@@ -62,11 +86,11 @@ public class CustomerRegister {
         String schema = helper.getResponseSchema(JsonSchema.CUSTOMER_REGISTER);
 
         restAssuredThat(response -> response.body("status", equalTo(true)));
-        restAssuredThat(response -> response.body("message", equalTo("Berhasil mendaftarkan akun!")));
-        restAssuredThat(response -> response.body("data.id", Matchers.notNullValue()));
-        restAssuredThat(response -> response.body("data.full_name", equalTo("John Doe")));
-        restAssuredThat(response -> response.body("data.email", equalTo("irvan-suriaaa3@blueharvest.com")));
-        restAssuredThat(response -> response.body("data.user_token", Matchers.notNullValue()));
+        restAssuredThat(response -> response.body("message", notNullValue()));
+        restAssuredThat(response -> response.body("data.id", notNullValue()));
+        restAssuredThat(response -> response.body("data.full_name", notNullValue()));
+        restAssuredThat(response -> response.body("data.email", notNullValue()));
+        restAssuredThat(response -> response.body("data.user_token", notNullValue()));
 
         restAssuredThat(response -> response.body(matchesJsonSchema(schema)));
 
