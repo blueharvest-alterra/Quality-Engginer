@@ -26,7 +26,7 @@ public class GetFarmByFarmID {
 
     @Step("I send GET request to get farm by FarmID")
     public void sendGetRequestToGetFarmByID() {
-        SerenityRest.given().get(setFarmApiEndpointForFarmByID() + "/c0a90f4a-7287-45e2-9b91-1a820b53c5f3");
+        SerenityRest.given().get(setFarmApiEndpointForFarmByID() + "/85d022e5-75db-4e70-a401-0d2177e392c0");
     }
 
     @Step("I send GET request to get farm by missing FarmID")

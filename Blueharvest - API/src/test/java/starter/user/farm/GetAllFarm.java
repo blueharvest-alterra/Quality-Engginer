@@ -54,7 +54,6 @@ public class GetAllFarm {
 
     @Step("the system should provide all farm details")
     public void verifyAllFarmDetails() {
-        // Tidak ada implementasi tambahan yang diperlukan
     }
 
 

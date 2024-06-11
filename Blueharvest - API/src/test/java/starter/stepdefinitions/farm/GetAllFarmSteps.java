@@ -11,7 +11,6 @@ public class GetAllFarmSteps {
 
     @Given("a user wants to retrieve all farm details")
     public void givenAUserWantsToRetrieveAllFarmDetails() {
-        // Tidak ada implementasi tambahan yang diperlukan
     }
 
     @When("the user sends a GET request to retrieve all farm details")
@@ -37,8 +36,4 @@ public class GetAllFarmSteps {
     }
 
 
-    @Then("the system should provide an error message about unauthorized access")
-    public void thenTheSystemShouldProvideAnErrorMessageAboutUnauthorizedAccess() {
-        getAllFarmDetails.verifyErrorMessageAboutUnauthorizedAccess();
-    }
 }

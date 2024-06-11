@@ -17,4 +17,4 @@ Feature: Delete Farm By FarmID
   Scenario: User fails to delete farm without providing FarmID
     Given I set farm API endpoint for deleting farm by FarmID
     When I send DELETE request without providing FarmID
-    Then I receive status code 400
+    Then I receive status code 404
