@@ -14,7 +14,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class UpdatePromoByPromoID {
-    private static String correctUrl = "https://blueharvest.irvansn.com/v1/promos/cdb94c52-4019-48ba-9fca-0b59a942de24";
+    private static String correctUrl = "https://blueharvest.irvansn.com/v1/promos/73b99be4-b751-4950-8ca9-477e9a3c005a";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/promos/invalid";
 
     @Step("I set API endpoint for editing a promo by PromoID")

@@ -25,7 +25,7 @@ public class GetPromoByPromoID {
     @Step("I send a GET request to retrieve the promo with a valid PromoID")
     public void sendGetRequestWithValidPromoID() {
         SerenityRest.given()
-                .get(setApiEndpoint() + "/0aa12977-125e-4aa2-9d20-1df94a5845f3");
+                .get(setApiEndpoint() + "/73b99be4-b751-4950-8ca9-477e9a3c005a");
     }
 
     @Step("I send a GET request to retrieve the promo with a wrong PromoID")

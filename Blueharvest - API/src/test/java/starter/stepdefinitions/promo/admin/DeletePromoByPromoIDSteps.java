@@ -1,4 +1,4 @@
-package starter.stepdefinitions.promo;
+package starter.stepdefinitions.promo.admin;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

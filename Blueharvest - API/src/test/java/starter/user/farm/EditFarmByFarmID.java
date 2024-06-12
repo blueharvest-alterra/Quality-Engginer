@@ -14,7 +14,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class EditFarmByFarmID {
-    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/6346b206-0773-44ac-9ad0-dbc4fd976835";
+    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/f1d55285-f1b3-42cd-aa15-5456ba6b9a6f";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/invalid-farms";
 
     @Step("I set farm API endpoint for editing farm by FarmID")

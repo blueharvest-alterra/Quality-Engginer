@@ -7,7 +7,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DeletePromoByPromoID {
-    private static String apiUrl = "https://blueharvest.irvansn.com/v1/promos/cdb94c52-4019-48ba-9fca-0b59a942de24";
+    private static String apiUrl = "https://blueharvest.irvansn.com/v1/promos/ac2125c1-dd84-4c02-85fa-df0212f578a9";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/invalid-promos";
 
     @Step("I set promo API endpoint for deleting promo by PromoID")
