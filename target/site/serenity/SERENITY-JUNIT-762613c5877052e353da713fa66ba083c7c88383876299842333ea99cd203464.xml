@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Create Product" skipped="0" tests="3" time="0.05" timestamp="2024-06-13 10:21:16"><testcase name="User creates a new product successfully"/><testcase name="User fails to create a new product due to missing required fields"><failure message="&#13;&#10;Expected: &lt;400&gt;&#13;&#10;     but: was &lt;500&gt;" type="java.lang.AssertionError">&#13;
+Expected: &lt;400&gt;&#13;
+     but: was &lt;500&gt;</failure><system-err>&#13;
+Expected: &lt;400&gt;&#13;
+     but: was &lt;500&gt;&#13;
+starter.user.product.admin.CreateProduct.sendPostRequestToCreateProductWithoutRequiredFields(CreateProduct.java:65)&#13;
+starter.stepdefinitions.product.admin.CreateProductSteps.sendPostRequestToCreateProductWithoutRequiredFields(CreateProductSteps.java:24)&#13;
+✽.I send a POST request to create a new product without required fields(file:///F:/Alterra/Capstone/API/Blueharvest-API/Blueharvest%20-%20API/src/test/resources/blueharvest-api/features/api/product/admin/CreateProduct.feature:14)&#13;
+</system-err></testcase><testcase name="User fails to create a new product due to invalid authorization token"/></testsuite>

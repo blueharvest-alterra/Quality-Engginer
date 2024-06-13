@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Customer Login" skipped="0" tests="3" time="0.06" timestamp="2024-06-13 10:20:54"><testcase name="User successfully logs in with valid data"/><testcase name="User fails to login due to incorrect password"/><testcase name="User fails to login due to invalid endpoint"/></testsuite>
