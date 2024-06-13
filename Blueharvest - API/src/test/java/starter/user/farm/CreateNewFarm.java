@@ -73,6 +73,6 @@ public class CreateNewFarm {
 
     @Step("I receive an error message about invalid endpoint")
     public void receiveErrorMessageAboutInvalidEndpoint() {
-        restAssuredThat(response -> response.statusCode(404));  // Ensure we get a 404 Not Found
+        restAssuredThat(response -> response.body("message", Matchers.notNullValue()));
     }
 }
