@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Register" skipped="0" tests="3" time="0.07" timestamp="2024-06-13 10:20:55"><testcase name="User successfully registers with valid data"/><testcase name="User failed to register account due to duplicate data"/><testcase name="User fails to register due to invalid endpoint"/></testsuite>
