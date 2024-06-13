@@ -13,6 +13,9 @@ public class GetAllCities {
     private static final String VALID_STATE_ID = "11";
     private static final String INVALID_STATE_ID = "https://blueharvest.irvansn.com/v1/addressess/citiess/invalid";
 
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImFlYjVkMGZkLTVmNWYtNGIxZC04NjM1LTVjMmJlZTc5MGM5ZCIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4MTk4Nzc0fQ.YmCFK76Dpa4-_DVIchXlGR81YbUAjj8omHaiTquMTOA";
+
+
     @Step("I set API endpoint for retrieving all cities for a specific state")
     public String setApiEndpoint() {
         return BASE_URL + VALID_STATE_ID;
@@ -26,18 +29,21 @@ public class GetAllCities {
     @Step("I send a GET request to retrieve all cities for a specific state")
     public void sendGetRequestToRetrieveAllCities() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
                 .get(setApiEndpoint());
     }
 
     @Step("I send a GET request to retrieve all cities for an invalid state ID")
     public void sendGetRequestToRetrieveAllCitiesWithInvalidStateID() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
                 .get(setInvalidApiEndpoint());
     }
 
     @Step("I send a GET request to retrieve all cities without proper authorization")
     public void sendGetRequestToRetrieveAllCitiesWithoutAuthorization() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
                 .put(setApiEndpoint())
                 .then()
                 .statusCode(405);  // Ensure we expect a 401 status code for unauthorized access

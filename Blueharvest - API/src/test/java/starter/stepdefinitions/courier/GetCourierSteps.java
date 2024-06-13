@@ -29,9 +29,9 @@ public class GetCourierSteps {
         getCourier.sendPostRequestToRetrieveCourierInformationWithInvalidEndpoint();
     }
 
-    @When("I send a POST request to get courier information without proper authorization")
-    public void whenISendPostRequestToGetCourierInformationWithoutProperAuthorization() {
-        getCourier.sendPostRequestToRetrieveCourierInformationWithoutAuthorization();
+    @When("I send a POST request to retrieve courier information with missing required fields")
+    public void sendPostRequestToRetrieveCourierInformationWithMissingRequiredFields() {
+        getCourier.sendPostRequestToRetrieveCourierInformationWithMissingRequiredFields();
     }
 
     @Then("I should receive valid courier information")
@@ -39,7 +39,4 @@ public class GetCourierSteps {
         getCourier.receiveValidCourierInformation();
     }
 
-    @Then("I receive status code 403")
-    public void receiveStatusCodeRegister403() {
-        getCourier.receiveStatusCode403(); }
 }

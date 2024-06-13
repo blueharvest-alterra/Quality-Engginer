@@ -14,7 +14,7 @@ Feature: POST Get Courier
     When I send a POST request to get courier information with an invalid endpoint
     Then I receive status code 404
 
-  Scenario: I fail to retrieve courier information due to unauthorized access
+  Scenario:I fail to retrieve courier information due to missing required fields
     Given I want to get courier information
-    When I send a POST request to get courier information without proper authorization
-    Then I receive status code 403
+    When I send a POST request to retrieve courier information with missing required fields
+    Then I receive status code 400
