@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="399b1694-04b4-4e62-8d39-7b81ef4f6e9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/pages/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/SignIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Quality-Engginer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web" beforeDir="false" afterPath="$PROJECT_DIR$/Blueharvest_Web" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/pages/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Blueharvest_Web" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2hodFaMgjlMd8dCCUcqA8lfLsEV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/kayiin/Documents/A. Studi Independen/Quality-Engginer",
+    "settings.editor.selected.configurable": "build.tools"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-be841094" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="399b1694-04b4-4e62-8d39-7b81ef4f6e9d" name="Changes" comment="" />
+      <created>1718264264885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718264264885</updated>
+    </task>
+    <servers />
+  </component>
+</project>

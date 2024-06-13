@@ -4,7 +4,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Blueharvest - API/pom.xml" />
         <option value="$PROJECT_DIR$/Blueharvest_Web/pom.xml" />
       </list>
     </option>
