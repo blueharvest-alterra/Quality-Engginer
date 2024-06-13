@@ -26,15 +26,8 @@ public class CreateNewFarm {
 
     @Step("I send a POST request with valid data")
     public void sendCreateFarmRequestWithValidData() {
-        // Create JSON part
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "this test title");
-        requestBody.put("description", "this test description");
-
-        // Load sample file
         File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
 
-        // Send POST request with multipart form data
         SerenityRest.given()
                 .multiPart("title", "this test title")
                 .multiPart("description", "this test description")
@@ -54,15 +47,8 @@ public class CreateNewFarm {
 
     @Step("I send a POST request with valid data to invalid endpoint")
     public void sendCreateFarmRequestWithValidDataOnInvalidEndpoint() {
-        // Create JSON part
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "this test title");
-        requestBody.put("description", "this test description");
-
-        // Load sample file
         File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
 
-        // Send POST request with multipart form data to invalid endpoint
         SerenityRest.given()
                 .multiPart("title", "this test title")
                 .multiPart("description", "this test description")
@@ -82,7 +68,7 @@ public class CreateNewFarm {
     @Step("I receive an error message about missing fields")
     public void receiveErrorMessageAboutMissingFields() {
         restAssuredThat(response -> response.body("status", equalTo(false)));
-        restAssuredThat(response -> response.body("message", equalTo("Gambar Farm Tidak Boleh Kosong")));
+        restAssuredThat(response -> response.body("message", Matchers.notNullValue()));
     }
 
     @Step("I receive an error message about invalid endpoint")

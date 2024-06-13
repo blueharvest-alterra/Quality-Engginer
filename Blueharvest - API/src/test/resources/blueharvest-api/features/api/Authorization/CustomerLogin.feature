@@ -18,3 +18,5 @@ Feature: Customer Login
     Given I set an invalid API endpoint for customer login
     When I send a POST request to login with invalid data
     Then I receive status code 404
+    Then I receive an error message about product not found
+

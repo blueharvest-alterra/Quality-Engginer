@@ -105,5 +105,9 @@ public class CustomerRegister {
     public void receiveStatusCodeRegister404() {
         restAssuredThat(response -> response.statusCode(404));
     }
+    @Step("I receive an error message about product not found")
+    public void receiveErrorMessageAboutNotFound() {
+        restAssuredThat(response -> response.body("message", Matchers.notNullValue()));
+    }
 
 }

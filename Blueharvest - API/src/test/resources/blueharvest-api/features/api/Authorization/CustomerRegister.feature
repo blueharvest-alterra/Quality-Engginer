@@ -19,6 +19,8 @@ Feature: Register
     Given I set an invalid API endpoint for user registration
     When I send a POST request to register a new user with invalid data
     Then I receive status code 404
+    Then I receive an error message about product not found
+
 
 
 

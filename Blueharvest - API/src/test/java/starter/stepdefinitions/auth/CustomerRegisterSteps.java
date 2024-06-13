@@ -48,6 +48,10 @@ public class CustomerRegisterSteps {
 
     @Then("I receive status code 404")
     public void receiveStatusCodeRegister404() {
-        register.receiveStatusCodeRegister404(); }
-
+        register.receiveStatusCodeRegister404();
+    }
+    @Then("I receive an error message about product not found")
+    public void receiveErrorMessageAboutNotFound() {
+        register.receiveErrorMessageAboutNotFound();
+    }
 }
