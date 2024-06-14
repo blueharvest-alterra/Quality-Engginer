@@ -9,10 +9,10 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class UpdateArticleByID {
 
-    private static final String BASE_URL = "https://example.com/api/v1/articles/";
-    private static final String TOKEN = "75569766-7c97-421a-95ce-306edd56aebd";
-    private static final String ARTICLE_ID = "75569766-7c97-421a-95ce-306edd56aebd";
-    private static final String INVALID_ID = "01928374-7c97-421a-95ce-306edd56aebd";
+    private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/articles/";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mzg5MzU0fQ.WfWfatVaBRamRXej-SDPuUYrrNQpdLv2AOVavg0Bz_o";
+    private static final String ARTICLE_ID = "22049aee-34c0-4044-964f-a7aaac3cc5c1";
+    private static final String INVALID_ID = "1c035a92-3c51-40e3-9463-4ba4e76a3b1b";
 
     @Step("I set API endpoint for updating an article by ID")
     public String setApiEndpoint() {
@@ -28,9 +28,11 @@ public class UpdateArticleByID {
     public void sendPutRequestToUpdateArticle() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
+                .contentType(ContentType.MULTIPART)
                 .multiPart("title", "this is update test title")
                 .multiPart("content", "this is update test description")
                 .multiPart("picture_file", "")
+                .when()
                 .put(setApiEndpoint())
                 .then()
                 .statusCode(200)
@@ -41,9 +43,11 @@ public class UpdateArticleByID {
     public void sendPutRequestToUpdateArticleWithoutRequiredFields() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
+                .contentType(ContentType.MULTIPART)
                 .multiPart("title", "")
                 .multiPart("content", "")
                 .multiPart("picture_file", "")
+                .when()
                 .put(setApiEndpoint())
                 .then()
                 .statusCode(400)
@@ -54,9 +58,11 @@ public class UpdateArticleByID {
     public void sendPutRequestToUpdateArticleWithInvalidID() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
+                .contentType(ContentType.MULTIPART)
                 .multiPart("title", "this is update test title")
                 .multiPart("content", "this is update test description")
                 .multiPart("picture_file", "")
+                .when()
                 .put(setInvalidApiEndpoint())
                 .then()
                 .statusCode(404)

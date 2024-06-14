@@ -24,7 +24,6 @@ public class CreateNewArticle {
 
     @Step("I send a POST request to create a new article")
     public void sendPostRequestToCreateNewArticle() {
-        // Load sample file (adjust path as needed)
         File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
 
         SerenityRest.given()
