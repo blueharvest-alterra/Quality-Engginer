@@ -19,7 +19,7 @@ public class UpdateArticleByIDSteps {
         updateArticleByID.sendPutRequestToUpdateArticle();
     }
 
-    @When("I send a PUT request to update the article with ID without required fields")
+    @When("I send a PUT request to update the article due to missing required fields")
     public void sendPutRequestToUpdateArticleByIDWithoutRequiredFields() {
         updateArticleByID.sendPutRequestToUpdateArticleWithoutRequiredFields();
     }

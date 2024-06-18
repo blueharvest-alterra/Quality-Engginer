@@ -13,7 +13,7 @@ public class GetAllCities {
     private static final String VALID_STATE_ID = "11";
     private static final String INVALID_STATE_ID = "https://blueharvest.irvansn.com/v1/addressess/citiess/invalid";
 
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImFlYjVkMGZkLTVmNWYtNGIxZC04NjM1LTVjMmJlZTc5MGM5ZCIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4MTk4Nzc0fQ.YmCFK76Dpa4-_DVIchXlGR81YbUAjj8omHaiTquMTOA";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
 
     @Step("I set API endpoint for retrieving all cities for a specific state")

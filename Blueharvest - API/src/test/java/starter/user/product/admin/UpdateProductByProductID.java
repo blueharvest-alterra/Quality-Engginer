@@ -13,8 +13,8 @@ import static org.hamcrest.Matchers.equalTo;
 public class UpdateProductByProductID {
 
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/products/";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mzg5MzU0fQ.WfWfatVaBRamRXej-SDPuUYrrNQpdLv2AOVavg0Bz_o";
-    private static final String PRODUCT_ID = "ff2e0075-28ee-4538-90e9-ef3270c1727f";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String PRODUCT_ID = "aa8af147-40e9-4ed2-b92d-054180b77016";
 
     @Step("I set API endpoint for updating a product")
     public String setApiEndpoint() {

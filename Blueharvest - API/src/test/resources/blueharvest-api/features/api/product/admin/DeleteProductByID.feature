@@ -3,12 +3,14 @@ Feature: Delete Product by ProductID
   I want to delete an existing product
   so that I can remove the product from the system
 
+
   Scenario: User deletes a product successfully
     Given I set API endpoint for deleting a product
     And I set the valid product ID
     When I send a DELETE request to delete the product
     Then I receive status code 200
     And I receive valid product deletion data
+
 
   Scenario: User fails to delete a product due to product ID not found
     Given I set API endpoint for deleting a product

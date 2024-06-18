@@ -13,7 +13,7 @@ public class AddNewAddress {
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/customers/addresses";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/customers/addresses/invalid";
 
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImM1NWNlZWE1LTQyMjctNGE2My05MjczLThmMjc5NDgyNjU0ZiIsIkVtYWlsIjoiaXJ2YW4tc3VyaWFhYTJAYmx1ZWhhcnZlc3QuY29tIiwiRnVsbE5hbWUiOiJKb2huIERvZSIsIlJvbGUiOiJjdXN0b21lciIsImV4cCI6MTcxODM2MTA3Mn0.LvtFFNhCSkXPhXeF8AXUp0g16iw4lU7C-3noLdpBLmY";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjI4MDY3MTUwLTNjN2UtNDNiYi05YzQ5LWExNGM0OGU4NDFmOCIsIkVtYWlsIjoiaXJ2YW4tc3VyaWFhYTJAYmx1ZWhhcnZlc3QuY29tIiwiRnVsbE5hbWUiOiJKb2huIERvZSIsIlJvbGUiOiJjdXN0b21lciIsImV4cCI6NDM0NjczODAwOX0.qrWk0N2e7lwcI5KPVSGbdVDp2bT_2y4GyG6KqsfXksA";
 
 
     @Step("I set API endpoint for adding a new address")

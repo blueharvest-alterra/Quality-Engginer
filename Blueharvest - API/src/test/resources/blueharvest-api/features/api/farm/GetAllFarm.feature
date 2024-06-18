@@ -18,4 +18,4 @@ Feature: GET All Farm
   Scenario: User fails to retrieve all farm details due to unauthorized access
     Given a user wants to retrieve all farm details
     When the user sends a GET request without proper authorization
-    Then I receive status code 404
+    Then I receive status code 403

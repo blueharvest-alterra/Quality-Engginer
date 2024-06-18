@@ -15,7 +15,7 @@ public class CreateNewArticle {
 
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/articles";
     private static final String BASE_InvalidURL = "https://blueharvest.irvansn.com/v1/articles/invalid";
-    private static final String VALID_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mzg5MzU0fQ.WfWfatVaBRamRXej-SDPuUYrrNQpdLv2AOVavg0Bz_o";
+    private static final String VALID_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set API endpoint for creating a new article")
     public String setApiEndpoint() {
@@ -59,7 +59,7 @@ public class CreateNewArticle {
                 .multiPart("picture_file", new File("src/test/java/starter/user/picture/Ikan.jpeg"))
                 .post(BASE_InvalidURL)
                 .then()
-                .statusCode(405);
+                .statusCode(403);
     }
 
     @Step("the system should confirm the article creation")

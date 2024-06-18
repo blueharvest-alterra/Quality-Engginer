@@ -14,8 +14,9 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class UpdatePromoByPromoID {
-    private static String correctUrl = "https://blueharvest.irvansn.com/v1/promos/73b99be4-b751-4950-8ca9-477e9a3c005a";
+    private static String correctUrl = "https://blueharvest.irvansn.com/v1/promos/ebf588aa-6e35-472f-a982-ddcdb014fc1f";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/promos/invalid";
+    private static final String VALID_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set API endpoint for editing a promo by PromoID")
     public String setApiEndpoint() {
@@ -37,6 +38,7 @@ public class UpdatePromoByPromoID {
         requestBody.put("amount", 150000);
 
         SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
                 .contentType("application/json")
                 .body(requestBody.toString())
                 .put(setApiEndpoint());
@@ -51,6 +53,7 @@ public class UpdatePromoByPromoID {
         requestBody.put("amount", 150000);
 
         SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
                 .contentType("application/json")
                 .body(requestBody.toString())
                 .put("https://blueharvest.irvansn.com/v1/promos/");
@@ -65,6 +68,7 @@ public class UpdatePromoByPromoID {
         requestBody.put("amount", 150000);
 
         SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
                 .contentType("application/json")
                 .body(requestBody.toString())
                 .put(setInvalidApiEndpoint());

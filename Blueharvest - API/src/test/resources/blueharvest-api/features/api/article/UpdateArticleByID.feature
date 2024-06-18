@@ -11,7 +11,7 @@ Feature: Update Article by ID
 
   Scenario: User fails to update an article due to missing required fields
     Given I set API endpoint for updating an article by ID
-    When I send a PUT request to update the article with ID without required fields
+    When I send a PUT request to update the article due to missing required fields
     Then I receive status code 400
     And I receive an error message about missing fields
 

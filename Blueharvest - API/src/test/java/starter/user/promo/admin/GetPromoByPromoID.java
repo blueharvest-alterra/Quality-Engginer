@@ -7,10 +7,11 @@ import org.hamcrest.Matchers;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class GetPromoByPromoID {
+public class GetPromoByPromoID  {
 
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/promos";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/promos/invalid";
+    private static final String VALID_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set API endpoint for retrieving a promo by PromoID")
     public String setApiEndpoint() {
@@ -25,18 +26,21 @@ public class GetPromoByPromoID {
     @Step("I send a GET request to retrieve the promo with a valid PromoID")
     public void sendGetRequestWithValidPromoID() {
         SerenityRest.given()
-                .get(setApiEndpoint() + "/73b99be4-b751-4950-8ca9-477e9a3c005a");
+                .header("Authorization", "Bearer " + VALID_TOKEN)
+                .get(setApiEndpoint() + "/aa8af147-40e9-4ed2-b92d-054180b77016");
     }
 
     @Step("I send a GET request to retrieve the promo with a wrong PromoID")
     public void sendGetRequestWithWrongPromoID() {
         SerenityRest.given()
-                .get(setApiEndpoint() + "/b4dgbsu-79e0-4144-ac49-073744a48b42");
+                .header("Authorization", "Bearer " + VALID_TOKEN)
+                .get(setApiEndpoint() + "/60dc3770-478c-4e49-aa5e-b9c0ff2c001f");
     }
 
     @Step("I send a GET request to retrieve the promo with a valid PromoID to an invalid endpoint")
     public void sendGetRequestToInvalidEndpoint() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
                 .get(setInvalidApiEndpoint());
     }
 
@@ -59,7 +63,7 @@ public class GetPromoByPromoID {
 
     @Step("I receive an error message about promo not found")
     public void receiveErrorMessagePromoNotFound() {
-        restAssuredThat(response -> response.body("message", equalTo("Promo not found")));
+        restAssuredThat(response -> response.body("message", equalTo("not found")));
     }
 
 }

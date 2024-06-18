@@ -12,6 +12,7 @@ public class GetAllPromo {
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/promos";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/invalid_promos";
     private static final String UNAUTHORIZED_URL = "https://blueharvest.irvansn.com/v1/unauthorized";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set API endpoint for retrieving all promos")
     public String setApiEndpoint() {
@@ -26,18 +27,24 @@ public class GetAllPromo {
     @Step("I send a GET request to retrieve all promos with valid data")
     public void sendGetRequestToRetrieveAllPromosWithValidData() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+
                 .get(setApiEndpoint());
     }
 
     @Step("I send a GET request to retrieve all promos to an invalid endpoint")
     public void sendGetRequestToInvalidEndpoint() {
         SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+
                 .get(setInvalidApiEndpoint());
     }
 
     @Step("I send a GET request to retrieve all promos during a server error")
     public void sendGetRequestDuringServerError() {
-        SerenityRest.given().get(UNAUTHORIZED_URL);
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+                .get(UNAUTHORIZED_URL);
 
     }
 

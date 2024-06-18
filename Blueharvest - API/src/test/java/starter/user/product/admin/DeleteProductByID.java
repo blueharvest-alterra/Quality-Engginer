@@ -10,9 +10,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class DeleteProductByID {
 
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/products/";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjoxNzE4Mzg5MzU0fQ.WfWfatVaBRamRXej-SDPuUYrrNQpdLv2AOVavg0Bz_o";
-    private static final String VALID_PRODUCT_ID = "d86eebc3-b5ce-4aa6-9637-98bc4854d213";
-    private static final String INVALID_PRODUCT_ID = "df83js00-b5ce-4aa6-9537-98bc4854d211";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String VALID_PRODUCT_ID = "f479748c-c31a-4817-b7c6-ae99b40ea5b6";
+    private static final String INVALID_PRODUCT_ID = "0000f000-fb00-00cc-b000-a1a8f6bde333";
 
     @Step("I set API endpoint for deleting a product")
     public String setApiEndpoint(String productId) {

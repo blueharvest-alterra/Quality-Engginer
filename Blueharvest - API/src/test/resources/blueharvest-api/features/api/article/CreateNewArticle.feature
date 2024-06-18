@@ -15,8 +15,8 @@ Feature: Create New Article
     Then I receive status code 400
     And I receive an error message about missing fields
 
-  Scenario: User fails to create a new article due to invalid endpoint
+  Scenario: User fails to create a new article due to unauthorized access
     Given I set API endpoint for creating a new article
     When I send a POST request to create a new article with invalid endpoint
-    Then I receive status code 405
-    And I receive an error message about invalid endpoint
+    Then I receive status code 403
+    And I receive an error message about unauthorized access

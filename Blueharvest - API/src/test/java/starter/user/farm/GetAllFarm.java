@@ -15,6 +15,7 @@ public class GetAllFarm {
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/farms";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/farms/invalid";
     private static final String UNAUTHORIZED_URL = "https://blueharvest.irvansn.com/v1/farms/unauthorized";
+    private static final String VALID_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set farm API endpoint to retrieve all farm details")
     public String setFarmApiEndpointToRetrieveAllFarmDetails() {
@@ -28,12 +29,16 @@ public class GetAllFarm {
 
     @Step("I send GET request to retrieve all farm details")
     public void sendGetRequestToRetrieveAllFarmDetails() {
-        SerenityRest.given().get(setFarmApiEndpointToRetrieveAllFarmDetails());
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
+                .get(setFarmApiEndpointToRetrieveAllFarmDetails());
     }
 
     @Step("I send GET request to an invalid endpoint")
     public void sendGetRequestToInvalidEndpoint() {
-        SerenityRest.given().get(setInvalidFarmApiEndpointToRetrieveAllFarmDetails());
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + VALID_TOKEN)
+                .get(setInvalidFarmApiEndpointToRetrieveAllFarmDetails());
     }
 
     @Step("I receive all farm details")
@@ -65,7 +70,8 @@ public class GetAllFarm {
 
     @Step("I send GET request without proper authorization")
     public void sendGetRequestWithoutAuthorization() {
-        SerenityRest.given().get(UNAUTHORIZED_URL);
+        SerenityRest.given()
+                .get(UNAUTHORIZED_URL);
     }
 
 }

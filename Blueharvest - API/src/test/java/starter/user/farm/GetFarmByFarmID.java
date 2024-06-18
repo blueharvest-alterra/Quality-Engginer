@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.*;
 public class GetFarmByFarmID {
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/farms";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/farms/invalid";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
 
     @Step("I set farm API endpoint for get farm by FarmID")
     public String setFarmApiEndpointForFarmByID() {
@@ -26,17 +27,23 @@ public class GetFarmByFarmID {
 
     @Step("I send GET request to get farm by FarmID")
     public void sendGetRequestToGetFarmByID() {
-        SerenityRest.given().get(setFarmApiEndpointForFarmByID() + "/f1d55285-f1b3-42cd-aa15-5456ba6b9a6f");
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+                .get(setFarmApiEndpointForFarmByID() + "/f1d55285-f1b3-42cd-aa15-5456ba6b9a6f");
     }
 
     @Step("I send GET request to get farm by missing FarmID")
     public void sendGetRequestToGetFarmByMissingID() {
-        SerenityRest.given().get(setFarmApiEndpointForFarmByID() + "/");
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+                .get(setFarmApiEndpointForFarmByID() + "/");
     }
 
     @Step("I send GET request to get farm by invalid FarmID")
     public void sendGetRequestToGetFarmByInvalidID() {
-        SerenityRest.given().get(setFarmApiEndpointForFarmByID() + "/eee45954-9662-4d6b-a8cb-8a2a83de4ab00");
+        SerenityRest.given()
+                .header("Authorization", "Bearer " + TOKEN)
+                .get(setFarmApiEndpointForFarmByID() + "/f1d55285-f1b3-42cd-aa15-5456ba6b9a6l");
     }
 
 

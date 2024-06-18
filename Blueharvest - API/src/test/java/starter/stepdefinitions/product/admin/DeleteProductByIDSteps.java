@@ -17,7 +17,6 @@ public class DeleteProductByIDSteps {
 
     @Given("I set an invalid product ID")
     public void setInvalidProductID() {
-        // This step could be used to set or validate the invalid product ID if needed
     }
 
     @When("I send a DELETE request to delete the product")

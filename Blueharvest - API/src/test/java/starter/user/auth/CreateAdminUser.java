@@ -33,7 +33,7 @@ public class CreateAdminUser {
 
         // Generate fake data
         String fullName = faker.name().fullName();
-        String email = faker.internet().safeEmailAddress(); // Gunakan safeEmailAddress untuk memastikan email yang unik
+        String email = faker.internet().safeEmailAddress();
         String password = faker.internet().password();
 
         // Create request body with fake data
