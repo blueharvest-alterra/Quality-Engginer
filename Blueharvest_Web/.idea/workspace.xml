@@ -5,26 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399b1694-04b4-4e62-8d39-7b81ef4f6e9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/pages/SignIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/SignIn.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Quality-Engginer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web" beforeDir="false" afterPath="$PROJECT_DIR$/Blueharvest_Web" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/pages/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/webdriver/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +29,14 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Blueharvest_Web" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2hodFaMgjlMd8dCCUcqA8lfLsEV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kayiin/Documents/A. Studi Independen/Quality-Engginer",
+    "last_opened_file_path": "/Users/kayiin/Documents/A. Studi Independen/Quality-Engginer/Blueharvest_Web",
     "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>

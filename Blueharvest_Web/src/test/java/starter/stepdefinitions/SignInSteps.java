@@ -4,15 +4,19 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.annotations.Steps;
 import org.junit.jupiter.api.Assertions;
+import starter.pages.Dashboard;
 import starter.pages.SignIn;
 
 public class SignInSteps {
-    private final SignIn signIn = new SignIn();
+    @Steps
+    SignIn signIn;
+    Dashboard dashboard;
 
     @Given("I am on the sign in page")
     public void onTheSignInPage() {
-        signIn.openUrl("https://sign-in-deploy.vercel.app/");
+        signIn.openUrl("https://wip-blueharvets.vercel.app/signin");
         Assertions.assertTrue(signIn.validateOnSignInPage());
     }
 
@@ -31,10 +35,9 @@ public class SignInSteps {
         signIn.clickSignInButton();
     }
 
-    @Then("I get success sign in message {string}")
-    public void getSuccessSignInMessage(String message) {
-        Assertions.assertTrue(signIn.validateMessageIsShown());
-        Assertions.assertTrue(signIn.validateEqualMessage(message));
+    @Then("I redirected to dashboard page")
+    public void redirectedToDashboardPage() {
+        Assertions.assertTrue(dashboard.validateOnDashboardPage());
     }
 
     @When("I input unregistered email")

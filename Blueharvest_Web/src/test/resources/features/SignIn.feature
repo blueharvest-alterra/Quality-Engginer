@@ -8,7 +8,7 @@ Feature: Sign In
     When I input valid email
     And I input valid password
     And I click sign in button
-    Then I get success sign in message "Berhasil login!"
+    Then I redirected to dashboard page
 
   Scenario: User cannot sign in with unregistered email
     Given I am on the sign in page
