@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import org.junit.jupiter.api.Assertions;
-import starter.pages.Dashboard;
+import starter.pages.dashboard.Dashboard;
 import starter.pages.SignIn;
 
 public class SignInSteps {
@@ -16,7 +16,7 @@ public class SignInSteps {
 
     @Given("I am on the sign in page")
     public void onTheSignInPage() {
-        signIn.openUrl("https://wip-blueharvets.vercel.app/signin");
+        signIn.openUrl("https://wip2-blueharvets.vercel.app/signin");
         Assertions.assertTrue(signIn.validateOnSignInPage());
     }
 
