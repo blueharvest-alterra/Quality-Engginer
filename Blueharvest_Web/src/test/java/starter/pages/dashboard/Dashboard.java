@@ -26,6 +26,16 @@ public class Dashboard extends PageObject {
 
     private By blueharvestIcon = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[1]/div[2]/h1");
 
+    private By searchButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[1]/div[2]/div/input"); // Adjust this locator
+    private By chatButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[1]/div[2]/a[1]"); // Adjust this locator
+    private By notificationButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[1]/div[2]/a[2]"); // Adjust this locator
+    private By profileButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[1]/div[2]/a[3]"); // Adjust this locator
+
+    private By productSearchPageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[2]/div/input"); // Adjust this locator
+    private By chatPageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/div[1]/h1"); // Adjust this locator
+    private By notificationPageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[2]/a[2]"); // Adjust this locator
+    private By profilePageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[2]/a[3]"); // Adjust this locator
+
     // Invalid button locators for negative scenarios
     private By invalidButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[2]/div[1]/div[99]/div[1]/div[2]/a");
 
@@ -73,6 +83,41 @@ public class Dashboard extends PageObject {
         return $(blueharvestIcon).isDisplayed();
     }
 
+    public boolean isOnChatPage() {
+        return $(chatPageTitle).isDisplayed();
+    }
+
+    public boolean isProductDisplayedInSearchResults() {
+        return $(productSearchPageTitle).isDisplayed();
+    }
+
+    public boolean isOnNotificationPage() {
+        return $(notificationPageTitle).isDisplayed();
+
+    }
+
+    public boolean isOnProfilePage() {
+        return $(profilePageTitle).isDisplayed();
+
+    }
+
+    public void searchProduct(String productName) {
+        $(searchButton).sendKeys(productName);
+        $(searchButton).submit(); // Adjust this if there is a separate search button to click
+    }
+
+    public void clickChatButton() {
+        $(chatButton).click();
+    }
+
+    public void clickNotificationButton() {
+        $(notificationButton).click();
+    }
+
+    public void clickProfileButton() {
+        $(profileButton).click();
+    }
+
     // Methods for negative scenarios
     public void clickInvalidButton() {
         try {
@@ -105,6 +150,7 @@ public class Dashboard extends PageObject {
             return true;
         }
     }
+
 
     // Additional negative scenario methods if needed...
 }

@@ -72,6 +72,47 @@ public class DashboardSteps {
         Assert.assertTrue(dashboardPage.validateOnDashboardPage());
     }
 
+
+    @When("I search for product")
+    public void whenISearchFor(String productName) {
+        dashboardPage.searchProduct("Gurame");
+    }
+
+    @Then("I should see the product displayed in the search results")
+    public void thenIShouldSeeTheProductDisplayedInTheSearchResults() {
+        Assert.assertTrue(dashboardPage.isProductDisplayedInSearchResults());
+    }
+
+    @When("I click on Chat button")
+    public void whenIClickOnChatButton() {
+        dashboardPage.clickChatButton();
+    }
+
+    @Then("I should be redirected to the Chat page")
+    public void thenIShouldBeRedirectedToTheChatPage() {
+        Assert.assertTrue(dashboardPage.isOnChatPage());
+    }
+
+    @When("I click on Notification button")
+    public void whenIClickOnNotificationButton() {
+        dashboardPage.clickNotificationButton();
+    }
+
+    @Then("I should be redirected to the Notification page")
+    public void thenIShouldBeRedirectedToTheNotificationPage() {
+        Assert.assertTrue(dashboardPage.isOnNotificationPage());
+    }
+
+    @When("I click on Profile button")
+    public void whenIClickOnProfileButton() {
+        dashboardPage.clickProfileButton();
+    }
+
+    @Then("I should be redirected to the Profile page")
+    public void thenIShouldBeRedirectedToTheProfilePage() {
+        Assert.assertTrue(dashboardPage.isOnProfilePage());
+    }
+
     // Negative scenario step definitions
     @When("I click on a non-existent Income Details button")
     public void whenIClickOnANonExistentIncomeDetailsButton() {

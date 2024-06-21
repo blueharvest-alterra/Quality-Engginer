@@ -35,6 +35,26 @@ Feature: Dashboard Functionality
     When I click on Latest Product Details button
     Then I should be redirected to the Latest Product Details page
 
+  Scenario: Search for a Product
+    Given I am on the Dashboard page
+    When I search for product
+    Then I should see the product displayed in the search results
+
+  Scenario: Navigate to Chat Page
+    Given I am on the Dashboard page
+    When I click on Chat button
+    Then I should be redirected to the Chat page
+
+  Scenario: Navigate to Notification Page
+    Given I am on the Dashboard page
+    When I click on Notification button
+    Then I should be redirected to the Notification page
+
+  Scenario: Navigate to Profile Page
+    Given I am on the Dashboard page
+    When I click on Profile button
+    Then I should be redirected to the Profile page
+
   Scenario: Validate Blueharvest Icon on Dashboard
     Given I am on the Dashboard page
     Then I should see the Blueharvest icon on the Dashboard page
@@ -61,6 +81,21 @@ Feature: Dashboard Functionality
     Then I should see an error message "Expected enabled element was not enabled"
 
   Scenario: Invalid Latest Product Details Button Click
+    Given I am on the Dashboard page
+    When I click on a non-existent Income Details button
+    Then I should see an error message "Expected enabled element was not enabled"
+
+  Scenario: Invalid Latest Chat Button Click
+    Given I am on the Dashboard page
+    When I click on a non-existent Income Details button
+    Then I should see an error message "Expected enabled element was not enabled"
+
+  Scenario: Invalid Latest Profil Button Click
+    Given I am on the Dashboard page
+    When I click on a non-existent Income Details button
+    Then I should see an error message "Expected enabled element was not enabled"
+
+  Scenario: Invalid Latest Notification Button Click
     Given I am on the Dashboard page
     When I click on a non-existent Income Details button
     Then I should see an error message "Expected enabled element was not enabled"
