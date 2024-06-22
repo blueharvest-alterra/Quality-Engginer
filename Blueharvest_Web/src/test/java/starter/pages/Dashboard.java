@@ -1,4 +1,4 @@
-package starter.pages.dashboard;
+package starter.pages;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;

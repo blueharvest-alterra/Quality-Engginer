@@ -1,11 +1,11 @@
-package starter.stepdefinitions.dashboard;
+package starter.stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import org.junit.Assert;
-import starter.pages.dashboard.Dashboard;
+import starter.pages.Dashboard;
 
 public class DashboardSteps {
 

@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
 import org.junit.jupiter.api.Assertions;
-import starter.pages.dashboard.Dashboard;
+import starter.pages.Dashboard;
 import starter.pages.SignIn;
 
 public class SignInSteps {
