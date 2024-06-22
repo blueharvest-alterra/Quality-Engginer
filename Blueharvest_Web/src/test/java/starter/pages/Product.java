@@ -12,20 +12,21 @@ public class Product extends PageObject {
     private By productPageButton() { return By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[2]/a[2]");}
     private By title() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/h1");}
     private By addProductButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/div");}
-    private By sampleProduct() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]/a");}
+    private By sampleProduct() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]");}
     private By titleProduct() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[1]/input");}
     private By stock() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[2]/input");}
     private By price() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[3]/div/input");}
     private By desc() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[4]/textarea");}
     private By image() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[6]/label[2]");}
     private By saveButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[7]/button[1]");}
-    private By editPage() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/h1");}
+    private By editPage() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/a[2]/button");}
     private By editTitle() {return By.xpath("//*[@id=\"name\"]");}
     private By editPrice() {return By.xpath("//*[@id=\"harga\"]");}
     private By editStock() {return By.xpath("//*[@id=\"stok\"]");}
     private By editDesc() {return By.xpath("//*[@id=\"desc\"]");}
     private By editSaveButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/form/div[3]/button[1]");}
     private By threeDotsIcon() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/button");}
+    private By deleteButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/button");}
     private By confirmDelete() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/button[1]");}
 
 
@@ -44,6 +45,8 @@ public class Product extends PageObject {
     public boolean validateListProductDisplayed() {
         return $(sampleProduct()).isDisplayed();
     }
+    @Step
+    public boolean validateProductName(String name) {return $(sampleProduct()).getText().equals(name);}
 
     @Step
     public void clickAddProductButton() {
@@ -72,7 +75,6 @@ public class Product extends PageObject {
 
     @Step
     public void inputProductImage(String imagePath) {
-        $(image()).click();
         WebElement fileInputElement = $(image());
         fileInputElement.sendKeys(imagePath);
     }
@@ -93,9 +95,8 @@ public class Product extends PageObject {
     }
 
     @Step
-    public void clickSampleProduct() {
-        $(sampleProduct()).click();
-        $(editPage()).isDisplayed();
+    public void clickEditProductButton() {
+        $(editPage()).click();
     }
 
     @Step
@@ -126,6 +127,12 @@ public class Product extends PageObject {
     public void clickThreeDotsIcon() {
         $(threeDotsIcon()).click();
     }
+
+    @Step
+    public void clickDeleteProductButton() {
+        $(deleteButton()).click();
+    }
+
     @Step
     public void clickConfirmDeleteButton() {
         $(confirmDelete()).click();

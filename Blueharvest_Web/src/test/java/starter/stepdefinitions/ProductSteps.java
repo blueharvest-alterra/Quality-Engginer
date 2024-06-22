@@ -94,11 +94,10 @@ public class ProductSteps extends PageObject {
         Assertions.assertTrue(signIn.validateEqualMessage(message));
     }
 
-    @When("I click a product")
-    public void clickAProduct() {
-        product.clickSampleProduct();
+    @And("I click edit product page button")
+    public void clickEditProductPage() {
+        product.clickEditProductButton();
     }
-
     @And("I edit product title")
     public void editProductTitle() {
         product.editProductTitle("Ikan Gurame");
@@ -149,6 +148,11 @@ public class ProductSteps extends PageObject {
     @When("I click three dots button of a product")
     public void clickThreeDotsButtonOfProduct() {
         product.clickThreeDotsIcon();
+    }
+
+    @And("I click delete product button")
+    public void clickDeleteProductButton() {
+        product.clickDeleteProductButton();
     }
 
     @And("I click confirm delete button")

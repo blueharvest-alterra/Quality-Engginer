@@ -8,13 +8,15 @@
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Product.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Transaction.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/VoucherPromo.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ProductSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/TransactionSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/VoucherPromoSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Monitoring.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/Product.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Transaction.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/VoucherPromo.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/image/ikanGurame.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver" afterDir="false" />

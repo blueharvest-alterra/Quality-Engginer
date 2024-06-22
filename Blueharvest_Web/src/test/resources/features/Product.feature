@@ -48,7 +48,8 @@ Feature: Product
     Then I get error product stock message "invalid stock"
 
   Scenario: Edit product with valid inputs
-    When I click a product
+    When I click three dots button of a product
+    And I click edit product page button
     And I edit product title
     And I edit product price
     And I edit product stock
@@ -57,7 +58,8 @@ Feature: Product
     Then I redirected to product page
 
   Scenario: Edit product with invalid price
-    When I click a product
+    When I click three dots button of a product
+    And I click edit product page button
     And I edit product title
     And I edit product with invalid price
     And I edit product stock
@@ -66,7 +68,8 @@ Feature: Product
     Then I get error edit product price message "invalid price"
 
   Scenario: Edit product with invalid stock
-    When I click a product
+    When I click three dots button of a product
+    And I click edit product page button
     And I edit product title
     And I edit product price
     And I edit product with invalid stock
@@ -76,6 +79,7 @@ Feature: Product
 
   Scenario: Delete product
     When I click three dots button of a product
+    And I click delete product button
     And I click confirm delete button
     Then I redirected to product page
 
