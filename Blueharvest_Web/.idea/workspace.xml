@@ -20,6 +20,7 @@
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/VoucherPromo.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/image/ikanGurame.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />

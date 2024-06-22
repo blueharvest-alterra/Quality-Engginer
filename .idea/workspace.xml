@@ -20,13 +20,13 @@
       <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/VoucherPromo.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/image/ikanGurame.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/chromedriver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Blueharvest_Web/serenity.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/pages/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/features/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

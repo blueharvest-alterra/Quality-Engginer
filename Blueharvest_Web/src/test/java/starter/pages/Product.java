@@ -20,6 +20,7 @@ public class Product extends PageObject {
     private By image() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[6]/label[2]");}
     private By saveButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[7]/button[1]");}
     private By editPage() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/a[2]/button");}
+    private By editProduct() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/form/div[1]/label");}
     private By editTitle() {return By.xpath("//*[@id=\"name\"]");}
     private By editPrice() {return By.xpath("//*[@id=\"harga\"]");}
     private By editStock() {return By.xpath("//*[@id=\"stok\"]");}
@@ -28,8 +29,9 @@ public class Product extends PageObject {
     private By threeDotsIcon() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/button");}
     private By deleteButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/button");}
     private By confirmDelete() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/button[1]");}
-
-
+    private By cancelButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[7]/button[2]");}
+    private By viewButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/a[1]/button");}
+    private By cancelEditButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/form/div[3]/a/button");}
     @Step
     public void clickProductPageButton() {
         $(productPageButton()).isDisplayed();
@@ -42,11 +44,11 @@ public class Product extends PageObject {
     }
 
     @Step
+    public boolean validateTitleOnProductPage() {return $(title()).getText().equals("Produk");}
+    @Step
     public boolean validateListProductDisplayed() {
         return $(sampleProduct()).isDisplayed();
     }
-    @Step
-    public boolean validateProductName(String name) {return $(sampleProduct()).getText().equals(name);}
 
     @Step
     public void clickAddProductButton() {
@@ -136,6 +138,31 @@ public class Product extends PageObject {
     @Step
     public void clickConfirmDeleteButton() {
         $(confirmDelete()).click();
+    }
+
+    @Step
+    public void clickCancelButton() {
+        $(cancelButton()).click();
+    }
+
+    @Step
+    public void clickViewButton() {
+        $(viewButton()).click();
+    }
+
+    @Step
+    public boolean validateOnEditProductPage() {
+        return $(editProduct()).isDisplayed();
+    }
+
+    @Step
+    public boolean validateTextInEditProductPage() {
+        return $(editProduct()).getText().equals("Gambar Produk");
+    }
+
+    @Step
+    public void clickCancelEditButton() {
+        $(cancelEditButton()).click();
     }
 
 }

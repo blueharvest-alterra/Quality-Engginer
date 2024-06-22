@@ -47,6 +47,20 @@ Feature: Product
     And I click save button
     Then I get error product stock message "invalid stock"
 
+  Scenario: Cancel adding a new product
+    When I click add product button
+    And I input valid product title
+    And I input valid stock
+    And I input valid price
+    And I input valid description
+    And I click cancel add product button
+    Then I redirected to product page
+
+  Scenario: View a product
+    When I click three dots button of a product
+    And I click view product button
+    Then I redirected to detail product page
+
   Scenario: Edit product with valid inputs
     When I click three dots button of a product
     And I click edit product page button
@@ -76,6 +90,13 @@ Feature: Product
     And I edit product description
     And I click save edit button
     Then I get error edit product stock message "invalid stock"
+
+  Scenario: Cancel editing a product
+    When I click three dots button of a product
+    And I click edit product page button
+    And I edit product title
+    And I click cancel edit button
+    Then I redirected to product page
 
   Scenario: Delete product
     When I click three dots button of a product

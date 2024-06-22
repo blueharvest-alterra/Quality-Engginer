@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,6 +19,7 @@ public class ProductSteps extends PageObject {
     public void goToProductPage() {
         product.clickProductPageButton();
         Assertions.assertTrue(product.validateOnProductPage());
+        Assertions.assertTrue(product.validateTitleOnProductPage());
     }
 
     @Then("I see the list of products")
@@ -64,6 +66,7 @@ public class ProductSteps extends PageObject {
     @Then("I redirected to product page")
     public void redirectedToProductPage() {
         Assertions.assertTrue(product.validateOnProductPage());
+        Assertions.assertTrue(product.validateTitleOnProductPage());
     }
 
     @Then("I get error add product message {string}")
@@ -159,4 +162,19 @@ public class ProductSteps extends PageObject {
     public void clickConfirmDeleteButton() {
         product.clickConfirmDeleteButton();
     }
+
+    @And("I click cancel add product button")
+    public void clickCancelAddProductButton() { product.clickCancelButton(); }
+
+    @And("I click view product button")
+    public void clickViewProductButton() { product.clickViewButton(); }
+
+    @Then("I redirected to detail product page")
+    public void redirectedToDetailProductPage() {
+        Assertions.assertTrue(product.validateOnEditProductPage());
+        Assertions.assertTrue(product.validateTextInEditProductPage());
+    }
+
+    @And("I click cancel edit button")
+    public void clickCancelEditButton() {product.clickCancelEditButton();}
 }

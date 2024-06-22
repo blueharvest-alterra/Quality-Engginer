@@ -22,7 +22,10 @@ public class VoucherPromo extends PageObject {
     private By editVoucherTitle() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/form/div[1]/input");}
     private By editVoucherCode() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/form/div[2]/input");}
     private By editDiscount() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/form/div[3]/div/input");}
-
+    private By viewVoucher() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr[1]/td[4]/div/ul/li[1]");}
+    private By cancelAddVoucher() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[2]/form/div[5]/button[2]");}
+    private By cancelEditVoucher() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/form/div[5]/button[2]");}
+    private By detailPage() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/form/div[1]/label");}
     @Step
     public void clickPromoPageButton() {
         $(voucherPage()).isDisplayed();
@@ -124,5 +127,21 @@ public class VoucherPromo extends PageObject {
     public void clickConfirmDelete() {
         $(confirmDelete()).click();
     }
+
+    @Step
+    public void clickCancelAddVoucher() {$(cancelAddVoucher()).click();}
+
+    @Step
+    public void clickViewPromo() {$(viewVoucher()).click();}
+
+    @Step
+    public boolean validateOnDetailPage() {return $(viewVoucher()).isDisplayed();}
+
+    @Step
+    public boolean validateTextOnDetailPage() { return $(viewVoucher()).getText().equals("Nama");}
+
+    @Step
+    public void clickCancelEditVoucher() {$(cancelEditVoucher()).click();}
+
 
 }

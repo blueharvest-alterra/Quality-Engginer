@@ -112,4 +112,20 @@ public class VoucherPromoSteps extends PageObject {
     public void clickConfirmDeleteVoucherButton() {
         voucherPromo.clickConfirmDelete();
     }
+
+    @And("I click cancel add promo button")
+    public void clickCancelAddPromoButton() {voucherPromo.clickCancelAddVoucher();}
+
+    @And("I click view promo button")
+    public void clickViewPromoButton() {voucherPromo.clickViewPromo();}
+
+    @Then("I can see the detail of promo")
+    public void seeDetailOfPromo() {voucherPromo.validateOnDetailPage();
+    voucherPromo.validateTextOnDetailPage();}
+
+    @And("I click cancel edit promo button")
+    public void clickCancelEditPromoButton() {
+        voucherPromo.clickCancelEditVoucher();
+    }
+
 }

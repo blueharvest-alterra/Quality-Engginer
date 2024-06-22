@@ -9,7 +9,6 @@ Blueharvest is an e-commerce platform dedicated to selling fish and providing fi
 - Mobile: https://docs.google.com/spreadsheets/d/14168s3Oc2gkNxaJOmTp2P1fitZiVYeSHrNq9ps8Iyq0/edit#gid=949373116
 
 ## Tech Stacks
-sebutkan daftar tools dan framework yang digunakan dalam bentuk list seperti ini:
 - API Testing - Postman, REST Assured
 - Web Testing - Selenium Webdriver
 - Mobile Testing - Appium, android studio
