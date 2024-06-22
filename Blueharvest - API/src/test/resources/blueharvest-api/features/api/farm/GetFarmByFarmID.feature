@@ -12,7 +12,7 @@ Feature: Get Farm By FarmID
   Scenario: User fails to retrieve farm details by invalid FarmID
     Given I set farm API endpoint for get farm by FarmID
     When I send GET request to get farm by invalid FarmID
-    Then I receive status code 400
+    Then I receive status code 404
 
   Scenario: User fails to retrieve farm details with missing FarmID
     Given I set farm API endpoint for get farm by FarmID

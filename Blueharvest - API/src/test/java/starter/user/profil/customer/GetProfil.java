@@ -10,7 +10,7 @@ public class GetProfil {
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/customers/profile";
     private static final String BASE_INVALID_URL = "https://blueharvest.irvansn.com/v1/customers/profile/invalid";
     private static final String UNAUTHORIZED_URL = "https://blueharvest.irvansn.com/v1/customers/profile/unauthorized";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjI4MDY3MTUwLTNjN2UtNDNiYi05YzQ5LWExNGM0OGU4NDFmOCIsIkVtYWlsIjoiaXJ2YW4tc3VyaWFhYTJAYmx1ZWhhcnZlc3QuY29tIiwiRnVsbE5hbWUiOiJKb2huIERvZSIsIlJvbGUiOiJjdXN0b21lciIsImV4cCI6NDM0NjczODAwOX0.qrWk0N2e7lwcI5KPVSGbdVDp2bT_2y4GyG6KqsfXksA";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6IjI4MDY3MTUwLTNjN2UtNDNiYi05YzQ5LWExNGM0OGU4NDFmOCIsIkVtYWlsIjoiaXJ2YW4tc3VyaWFhYTJAYmx1ZWhhcnZlc3QuY29tIiwiRnVsbE5hbWUiOiJKb2huIERvZSIsIlJvbGUiOiJjdXN0b21lciIsImV4cCI6NDM0NzA4MTE1NH0.uN_0PYvQCeI-dTRVCxZD5pF6KBAyCEzoVF1v84rOK3o";
 
 
     @Step("I set API endpoint for retrieving profile")

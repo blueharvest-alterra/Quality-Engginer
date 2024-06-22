@@ -3,6 +3,13 @@ Feature: Sign In
   I want to Sign In
   So that I can manage dashboard
 
+  Scenario: User can sign in with all valid credentials
+    Given I am on the sign in page
+    When I input valid email
+    And I input valid password
+    And I click sign in button
+    Then I redirected to dashboard page
+
   Scenario: User cannot sign in with unregistered email
     Given I am on the sign in page
     When I input unregistered email
@@ -28,10 +35,3 @@ Feature: Sign In
     Given I am on the sign in page
     And I click sign in button
     Then I get empty error message "Harap isi bidang ini."
-
-  Scenario: User can sign in with all valid credentials
-    Given I am on the sign in page
-    When I input valid email
-    And I input valid password
-    And I click sign in button
-    Then I redirected to dashboard page

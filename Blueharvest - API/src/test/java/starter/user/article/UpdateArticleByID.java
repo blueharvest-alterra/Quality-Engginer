@@ -4,17 +4,20 @@ import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.annotations.Step;
 import org.hamcrest.Matchers;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
 
 import java.io.File;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class UpdateArticleByID {
 
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/articles/";
     private static final String INV_URL = "https://blueharvest.irvansn.com/v1/articles/";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
-    private static final String ARTICLE_ID = "82971c5c-860d-4542-8b10-d669beeb1757";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
+    private static final String ARTICLE_ID = "e6ef8f55-8571-42bf-898a-ea2e8e5b0b1b";
     private static final String INVALID_ID = "00000c5c-860d-4542-8b10-d669beeb0000";
 
     @Step("I set API endpoint for updating an article by ID")
@@ -74,7 +77,10 @@ public class UpdateArticleByID {
 
     @Step("The system should confirm the article update")
     public void systemShouldConfirmArticleUpdate() {
+        JsonSchemaHelper helper = new JsonSchemaHelper();
+        String schema = helper.getResponseSchema(JsonSchema.UPDATE_ARTICLE_BY_ARTICLEID);
         restAssuredThat(response -> response.body("message", Matchers.equalTo("article updated!")));
+        restAssuredThat(schemaValidator -> schemaValidator.body(matchesJsonSchema(schema)));
     }
 
     @Step("I receive an error message about missing fields")
