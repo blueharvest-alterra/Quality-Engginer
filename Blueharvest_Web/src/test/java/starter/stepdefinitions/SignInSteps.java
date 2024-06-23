@@ -16,7 +16,7 @@ public class SignInSteps {
 
     @Given("I am on the sign in page")
     public void onTheSignInPage() {
-        signIn.openUrl("https://wip-blueharvets.vercel.app/signin");
+        signIn.openUrl("https://wip2-blueharvets.vercel.app/signin");
         Assertions.assertTrue(signIn.validateOnSignInPage());
     }
 
