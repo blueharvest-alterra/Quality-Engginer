@@ -12,13 +12,28 @@
     "data": {
       "type": "object",
       "properties": {
-        "farm-monitor": {
-          "type": "array",
-          "items": {}
+        "id": {
+          "type": "string"
+        },
+        "farm_id": {
+          "type": "string"
+        },
+        "temperature": {
+          "type": "number"
+        },
+        "ph": {
+          "type": "number"
+        },
+        "dissolved_oxygen": {
+          "type": "number"
         }
       },
       "required": [
-        "farm-monitor"
+        "id",
+        "farm_id",
+        "temperature",
+        "ph",
+        "dissolved_oxygen"
       ]
     }
   },

@@ -22,7 +22,7 @@ public class GetFarmMonitorByMonitorID {
     public void sendGetRequestToGetAllFarmMonitorsByFarmId() {
         SerenityRest.given()
                 .header("Authorization", TOKEN)
-                .get(setFarmMonitorApiEndpointForFarmId() + "0000e000-24e0-0000-0000-ebcd19061a9b");
+                .get(setFarmMonitorApiEndpointForFarmId() + "df0a0283-daa3-4cb3-bf54-d0d246ed63e8");
     }
 
     @Step("I receive status code 200")
@@ -35,8 +35,7 @@ public class GetFarmMonitorByMonitorID {
         JsonSchemaHelper helper = new JsonSchemaHelper();
         String schema = helper.getResponseSchema(JsonSchema.GET_ALL_FARM_MONITORS_BY_MONITORID);
         restAssuredThat(response -> response.body("status", equalTo(true)));
-        restAssuredThat(response -> response.body("message", equalTo("Success get all farm monitor data!")));
-        restAssuredThat(response -> response.body("data", notNullValue()));
+        restAssuredThat(response -> response.body("message", equalTo("Success get farm monitor data!")));
         restAssuredThat(response -> response.body(matchesJsonSchema(schema)));
     }
 

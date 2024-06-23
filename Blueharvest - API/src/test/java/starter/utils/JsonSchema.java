@@ -30,6 +30,9 @@ public class JsonSchema {
     public static final String GET_ALL_STATE = "schema/address/get_all_state.json";
     public static final String GET_ALL_CITIES = "schema/address/get_all_cities.json";
     public static final String GET_COURIER = "schema/courier/get_courier.json";
+    public static final String GET_ALL_FARM_INVEST_USER = "schema/farmInvest/get_allFarm_invest_user.json";
+    public static final String GET_FARM_INVEST_BY_ID = "schema/farmInvest/GetFarmInvestByFarmInvestID.json";
+
 
 
 }

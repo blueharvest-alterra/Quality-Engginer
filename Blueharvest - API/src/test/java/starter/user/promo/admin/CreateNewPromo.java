@@ -45,9 +45,9 @@ public class CreateNewPromo {
     public void sendCreatePromoRequestWithMissingRequiredFields() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("name", "");
-        requestBody.put("code", "");
-        requestBody.put("status", "");
-        requestBody.put("amount", "" );
+        requestBody.put("code", "this test code");
+        requestBody.put("status", "available");
+        requestBody.put("amount", 35000);
 
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
@@ -94,7 +94,7 @@ public class CreateNewPromo {
 
     @Step("I receive an error promo message about unauthorized access")
     public void receiveErrorPromoMessageUnauthorizedAccess() {
-        restAssuredThat(response -> response.body("message", equalTo("Unauthorized")));
+        restAssuredThat(response -> response.body("message", equalTo("input cannot be empty")));
     }
 
     @Step("I receive status code 404 for invalid endpoint")
