@@ -17,7 +17,7 @@ public class Product extends PageObject {
     private By stock() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[2]/input");}
     private By price() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[3]/div/input");}
     private By desc() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[4]/textarea");}
-    private By image() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[6]/label[2]");}
+    private By image() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[6]/label[2]/input");}
     private By saveButton() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div/form/div[7]/button[1]");}
     private By editPage() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[7]/div/a[2]/button");}
     private By editProduct() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/form/div[1]/label");}

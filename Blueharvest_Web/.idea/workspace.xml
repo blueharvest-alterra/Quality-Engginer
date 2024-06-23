@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399b1694-04b4-4e62-8d39-7b81ef4f6e9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Article.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Product.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/SignIn.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Transaction.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/VoucherPromo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ArticleSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/DashboardSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ProductSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/TransactionSteps.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/VoucherPromoSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Article.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/Product.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/resources/features/Transaction.feature" afterDir="false" />
