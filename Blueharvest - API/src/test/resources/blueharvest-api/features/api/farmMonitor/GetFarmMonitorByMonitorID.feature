@@ -17,4 +17,4 @@ Feature: Get All Farm Monitor By MonitorId
   Scenario: User fails to retrieve all farm monitors with missing MonitorId
     Given I set farm monitor API endpoint for get all monitors by MonitorId
     When I send GET request to get all monitor monitors with missing MonitorId
-    Then I receive status code 404
+    Then I receive status code 400

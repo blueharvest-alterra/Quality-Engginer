@@ -1,5 +1,5 @@
 
-Feature: Edit Farm By FarmID
+Feature: Update Farm By FarmID
   As a user
   I want to edit farm details by FarmID so that
   I can update specific farm information

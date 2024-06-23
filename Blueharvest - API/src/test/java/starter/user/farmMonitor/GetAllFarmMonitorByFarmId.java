@@ -6,6 +6,7 @@ import org.hamcrest.Matchers;
 import starter.utils.JsonSchema;
 import starter.utils.JsonSchemaHelper;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.*;
 
@@ -23,7 +24,10 @@ public class GetAllFarmMonitorByFarmId {
     public void sendGetRequestToGetAllFarmMonitorsByFarmId() {
         SerenityRest.given()
                 .header("Authorization", TOKEN)
-                .get(setFarmMonitorApiEndpointForFarmId() + "6e64f138-a094-4780-b34a-b1d0a00430f2");
+                .get(setFarmMonitorApiEndpointForFarmId() + "6e64f138-a094-4780-b34a-b1d0a00430f2")
+                .then()
+                .time(lessThan(10L), SECONDS)  // Set maximum response time to 10 seconds
+                .log().all();
     }
 
     @Step("I receive status code 200")

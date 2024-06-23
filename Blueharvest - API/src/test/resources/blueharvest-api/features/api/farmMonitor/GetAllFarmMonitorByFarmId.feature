@@ -3,6 +3,7 @@ Feature: Get All Farm Monitor By FarmId
   I want to retrieve all farm monitors by FarmId
   So that I can view specific farm monitor information
 
+  @Get_Farm_Monitor_FarmID
   Scenario: User retrieves all farm monitors by valid FarmId
     Given I set farm monitor API endpoint for get all monitors by FarmId
     When I send GET request to get all farm monitors by valid FarmId

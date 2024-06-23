@@ -14,7 +14,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class EditFarmByFarmID {
-    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/c9107591-2f7a-44b3-ae19-1d0bc767095c";
+    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/ac854a7c-b575-45dd-b66c-c22181078a03";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/invalid-farms";
     private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
@@ -35,15 +35,18 @@ public class EditFarmByFarmID {
         if (!sampleFile.exists()) {
             throw new RuntimeException("File not found: " + sampleFile.getAbsolutePath());
         }
+
+        // Send PUT request with multipart form data
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
                 .multiPart("title", "this is update test title")
                 .multiPart("description", "this is update test description")
                 .multiPart("picture_file", sampleFile)
+                .when()
                 .put(setApiEndpoint())
                 .then()
-                .assertThat()
-                .statusCode(200);  // Expecting status code 200 for successful request
+                .statusCode(200)  // Expecting status code 200 for successful request
+                .log().all();  // Log all details of the request and response
     }
 
 
