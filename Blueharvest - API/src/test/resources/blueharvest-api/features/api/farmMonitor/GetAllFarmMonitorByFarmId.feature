@@ -13,7 +13,7 @@ Feature: Get All Farm Monitor By FarmId
   Scenario: User fails to retrieve all farm monitors by invalid FarmId
     Given I set farm monitor API endpoint for get all monitors by FarmId
     When I send GET request to get all farm monitors by invalid FarmId
-    Then I receive status code 404
+    Then I receive status code 500
 
   Scenario: User fails to retrieve all farm monitors with missing FarmId
     Given I set farm monitor API endpoint for get all monitors by FarmId

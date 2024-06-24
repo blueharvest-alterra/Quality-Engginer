@@ -5,7 +5,10 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -109,7 +112,10 @@ public class CreateTransaction {
 
     @Step("The system should confirm successful transaction creation")
     public void confirmSuccessfulTransactionCreation() {
+        JsonSchemaHelper helper = new JsonSchemaHelper();
+        String schema = helper.getResponseSchema(JsonSchema.CREATE_TRANSACTIONS);
         restAssuredThat(response -> response.body("status", equalTo(true)));
         restAssuredThat(response -> response.body("message", equalTo("transaction created")));
+        restAssuredThat(resp -> resp.body(matchesJsonSchema(schema)));
     }
 }

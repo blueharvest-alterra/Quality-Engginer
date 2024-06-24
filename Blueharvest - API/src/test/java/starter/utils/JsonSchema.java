@@ -33,6 +33,13 @@ public class JsonSchema {
     public static final String GET_ALL_FARM_INVEST_USER = "schema/farmInvest/get_allFarm_invest_user.json";
     public static final String GET_FARM_INVEST_BY_ID = "schema/farmInvest/GetFarmInvestByFarmInvestID.json";
     public static final String CREATE_NEW_FARM_INVEST = "schema/farmInvest/create_farm_invest.json";
+    public static final String CHECKOUT_SUMMARY = "schema/transactions/checkout_summary.json";
+    public static final String CREATE_TRANSACTIONS = "schema/transactions/create_transactions.json";
+    public static final String GET_TRANSACTION_BY_ID = "schema/transactions/get_transactionsByID.json";
+    public static final String GET_ALL_MESSAGE = "schema/chatBotAI/get_all_message.json";
+    public static final String SEND_MESSAGE = "schema/chatBotAI/sendMessage.json";
+    public static final String ADD_NEW_ADDRESS = "schema/customer/add_new_address.json";
+    public static final String GET_ALL_ADDRESS = "schema/customer/get_all_address.json";
 
 
 

@@ -30,7 +30,7 @@ public class GetPromoByPromoID  {
     public void sendGetRequestWithValidPromoID() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + VALID_TOKEN)
-                .get(setApiEndpoint() + "/70e4007a-41d5-4e11-a4cb-8789b94fa55a");
+                .get(setApiEndpoint() + "/32af411f-e0b4-4270-8fe2-e9ac525fa879");
     }
 
     @Step("I send a GET request to retrieve the promo with a wrong PromoID")

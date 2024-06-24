@@ -10,7 +10,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DeleteFarmByFarmID {
-    private static String apiUrl = "https://blueharvest.irvansn.com/v1/farms/a8b15687-06ce-41c8-a539-29921f1b62e9";
+    private static String apiUrl = "https://blueharvest.irvansn.com/v1/farms/ed813024-84d7-4f7e-a7cd-a00ba583b442";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/invalid-farms";
 
     @Step("I set farm API endpoint for deleting farm by FarmID")

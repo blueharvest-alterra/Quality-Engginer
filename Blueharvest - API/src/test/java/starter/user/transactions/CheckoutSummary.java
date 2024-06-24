@@ -5,7 +5,10 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -109,8 +112,11 @@ public class CheckoutSummary {
 
     @Step("The system should confirm successful checkout summary response")
     public void confirmSuccessfulCheckoutSummaryResponse() {
+        JsonSchemaHelper helper = new JsonSchemaHelper();
+        String schema = helper.getResponseSchema(JsonSchema.CHECKOUT_SUMMARY);
         restAssuredThat(response -> response.body("status", equalTo(true)));
         restAssuredThat(response -> response.body("message", equalTo("get checkout summary successfully")));
+        restAssuredThat(resp -> resp.body(matchesJsonSchema(schema)));
     }
 
     @Step("The system should return an unauthorized error message")
