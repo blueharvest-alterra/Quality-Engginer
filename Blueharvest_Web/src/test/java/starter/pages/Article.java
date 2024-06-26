@@ -1,5 +1,6 @@
 package starter.pages;
 
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -53,8 +54,8 @@ public class Article extends PageObject {
         $(articleImageField).sendKeys(imageUrl);
     }
 
-    public void inputArticleDescription(String description) {
-        $(articleDescriptionField).type(description);
+    public void inputArticleDescription(String desc) {
+        $(articleDescriptionField()).type(desc);
     }
 
     public void clickSaveButton() {

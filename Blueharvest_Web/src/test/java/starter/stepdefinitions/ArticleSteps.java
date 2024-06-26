@@ -40,10 +40,6 @@ public class ArticleSteps {
         articlePage.inputArticleTitle("Sample Article");
     }
 
-    @When("I input valid image")
-    public void whenIInputValidImage() {
-        articlePage.inputArticleImage("src/test/resources/image/ikanGurame.jpg");
-    }
 
     @When("I input valid description")
     public void whenIInputValidDescription() {
@@ -51,7 +47,7 @@ public class ArticleSteps {
                 "maka dari itu perlu ada nya pengairan tambak dengan metode delete");
     }
 
-    @When("I click save button")
+    @When("I click save button article")
     public void whenIClickSaveButton() {
         articlePage.clickSaveButton();
     }

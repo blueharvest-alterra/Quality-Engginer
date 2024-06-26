@@ -18,7 +18,7 @@ Feature: Article
     And I input valid article title
     And I input valid image
     And I input valid description
-    And I click save button
+    And I click save button article
     Then I redirected to article page
 
   Scenario: Cancel adding articles with valid inputs
@@ -41,7 +41,7 @@ Feature: Article
   Scenario: Cancel editing an article
     Given I am on the Article page
     When I select an article to edit
-    And I click on edit butgiton
+    And I click on edit button
     And I change my mind and click cancel button
     Then I redirected to article page
 
