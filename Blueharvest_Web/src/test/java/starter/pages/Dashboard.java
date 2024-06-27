@@ -35,12 +35,24 @@ public class Dashboard extends PageObject {
     private By chatPageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/div[1]/h1"); // Adjust this locator
     private By notificationPageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[2]/a[2]"); // Adjust this locator
     private By profilePageTitle = By.xpath("//*[@id=\"root\"]/div/div[2]/div[1]/div[2]/a[3]"); // Adjust this locator
+    private By incomeSummary = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[2]/div[2]/h1"); // Adjust this locator
+    private By incomeSummaryBaseOnDate = By.xpath("/html/body/div/div/div/div/div/div[2]/div[2]/div[2]/div/div/div[1]/div[1]"); // Adjust this locator
+
 
     // Invalid button locators for negative scenarios
     private By invalidButton = By.xpath("//*[@id=\"root\"]/div/div/div/div/div[2]/div[2]/div[1]/div[99]/div[1]/div[2]/a");
 
     public void clickIncomeDetailsButton() {
         $(incomeDetailsButton).click();
+    }
+
+    public boolean isOnIncomeSummaryPage(){
+        return $(incomeSummary).isDisplayed();
+    }
+
+
+    public void incomeSummaryBaseOnDate() {
+        $(incomeSummaryBaseOnDate).click();
     }
 
     public void clickProductTotalDetailsButton() {

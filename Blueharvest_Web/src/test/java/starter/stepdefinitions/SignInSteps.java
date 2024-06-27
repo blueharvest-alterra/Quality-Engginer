@@ -5,18 +5,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
+import net.serenitybdd.core.pages.PageObject;
 import org.junit.jupiter.api.Assertions;
 import starter.pages.Dashboard;
 import starter.pages.SignIn;
 
-public class SignInSteps {
+public class SignInSteps extends PageObject {
     @Steps
     SignIn signIn;
     Dashboard dashboard;
 
     @Given("I am on the sign in page")
     public void onTheSignInPage() {
-        signIn.openUrl("https://wip2-blueharvets.vercel.app/signin");
+        signIn.openUrl("https://blueharvest-alterra.vercel.app/signin");
         Assertions.assertTrue(signIn.validateOnSignInPage());
     }
 

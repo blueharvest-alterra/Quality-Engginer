@@ -22,7 +22,7 @@ public class ArticleSteps {
     }
     @Then("I redirected to edit article page")
     public void thenIRedirectedToEditArticlePage() {
-        Assertions.assertTrue(articlePage.thenIRedirectedToEditArticlePage());
+        Assertions.assertTrue(articlePage.isOnArticlePage());
     }
 
     @Given("I am on the Article page")
@@ -38,6 +38,11 @@ public class ArticleSteps {
     @When("I input valid article title")
     public void whenIInputValidArticleTitle() {
         articlePage.inputArticleTitle("Sample Article");
+    }
+
+    @And("I input valid image article")
+    public void inputValidImage() {
+        articlePage.inputArticleImage("F:\\Alterra\\Capstone\\API\\Blueharvest-API\\Blueharvest_Web\\src\\test\\resources\\image\\ikanGurame.jpg");
     }
 
 

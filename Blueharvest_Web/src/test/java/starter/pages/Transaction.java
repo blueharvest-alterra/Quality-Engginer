@@ -6,10 +6,10 @@ import org.openqa.selenium.By;
 
 public class Transaction extends PageObject {
 
-    private By transactionButton() {return By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[2]/a[7]");}
+    private By transactionButton() {return By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[2]/a[6]");}
     private By title() {return By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[1]/h1");}
     private By nextButton() {return By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/div/div/button[6]");}
-    private By sampleTransaction() {return By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/table/tbody/tr[2]/td[1]");}
+    private By sampleTransaction() {return By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/table");}
     private By firstSampleTransaction() {return By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/div[2]/div/table/tbody/tr[1]/td[1]");}
     @Step
     public void goToTransactionPage() {

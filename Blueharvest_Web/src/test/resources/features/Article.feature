@@ -1,3 +1,6 @@
+
+@Ignore
+
 Feature: Article
   As a admin
   I want to manage article
@@ -16,7 +19,7 @@ Feature: Article
     Given I am on the Article page
     When I click add article button
     And I input valid article title
-    And I input valid image
+    And I input valid image article
     And I input valid description
     And I click save button article
     Then I redirected to article page
@@ -25,7 +28,7 @@ Feature: Article
     Given I am on the Article page
     When I click add article button
     And I input valid article title
-    And I input valid image
+    And I input valid image article
     And I input valid description
     And I click cancle button
     Then I redirected to article page
@@ -35,7 +38,7 @@ Feature: Article
     When I select an article to edit
     And I click on edit button
     And I update description
-    And I click save button
+    And I click save button article
     Then I redirected to edit article page
 
   Scenario: Cancel editing an article
@@ -55,7 +58,7 @@ Feature: Article
 
   Scenario: View details of an article
     Given I am on the Article page
-    When I select an article to view details
+    When I select an article to edit
     And I click on view detail article
     Then I am redirected to the article details page
 

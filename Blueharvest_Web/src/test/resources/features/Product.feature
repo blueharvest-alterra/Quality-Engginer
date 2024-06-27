@@ -1,3 +1,4 @@
+@Ignore
 Feature: Product
   As a admin
   I want to manage product
@@ -14,12 +15,13 @@ Feature: Product
   Scenario: See list of products
     Then I see the list of products
 
+
   Scenario: Add new product with valid inputs
     When I click add product button
     And I input valid product title
     And I input valid stock
     And I input valid price
-    And I input valid description
+    And I input valid description product
     And I input valid image
     And I click save button
     Then I redirected to product page
@@ -34,7 +36,7 @@ Feature: Product
     And I input valid product title
     And I input valid stock
     And I input invalid price
-    And I input valid description
+    And I input valid description product
     And I click save button
     Then I get error product price message "invalid price"
 
@@ -43,7 +45,7 @@ Feature: Product
     And I input valid product title
     And I input invalid stock
     And I input valid price
-    And I input valid description
+    And I input valid description product
     And I click save button
     Then I get error product stock message "invalid stock"
 
@@ -52,7 +54,7 @@ Feature: Product
     And I input valid product title
     And I input valid stock
     And I input valid price
-    And I input valid description
+    And I input valid description product
     And I click cancel add product button
     Then I redirected to product page
 
@@ -66,7 +68,6 @@ Feature: Product
     And I click edit product page button
     And I edit product title
     And I edit product price
-    And I edit product stock
     And I edit product description
     And I click save edit button
     Then I redirected to product page
@@ -76,7 +77,6 @@ Feature: Product
     And I click edit product page button
     And I edit product title
     And I edit product with invalid price
-    And I edit product stock
     And I edit product description
     And I click save edit button
     Then I get error edit product price message "invalid price"

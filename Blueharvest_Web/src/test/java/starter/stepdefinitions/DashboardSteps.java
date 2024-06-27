@@ -4,10 +4,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
+import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
 import starter.pages.Dashboard;
 
-public class DashboardSteps {
+public class DashboardSteps extends PageObject {
 
     @Steps
     Dashboard dashboardPage;
@@ -117,6 +118,16 @@ public class DashboardSteps {
     @When("I click on a non-existent Income Details button")
     public void whenIClickOnANonExistentIncomeDetailsButton() {
         dashboardPage.clickInvalidButton();
+    }
+
+    @When("I see income summary on dashboard page")
+    public void isOnIncomeSummaryPage(){
+        Assert.assertTrue(dashboardPage.isOnIncomeSummaryPage());
+    }
+
+    @Then ("I hovered over and saw the earnings summary on June 1st")
+        public void incomeSummaryBaseOnDate() {
+       dashboardPage.incomeSummaryBaseOnDate();
     }
 
     @Then("I should see an error message {string}")
