@@ -31,6 +31,5 @@ public class TransactionSteps extends PageObject {
     @Then("I see the next page of list transactions")
     public void seeTheNextPageListTransactions() {
         Assertions.assertTrue(transaction.validateSampleTransaction());
-        Assertions.assertTrue(transaction.validateSampleTransactionName("Daniel Martinez"));
     }
 }

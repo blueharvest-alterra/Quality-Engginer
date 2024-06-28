@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 public class VoucherPromo extends PageObject {
-    private By voucherPage() { return By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[2]/a[6]");}
+    private By voucherPage() { return By.xpath("//*[@id=\"root\"]/div/div/div/div/div[1]/div[2]/a[5]");}
     private By title() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/h1");}
     private By addVoucherButton() { return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/button");}
     private By sampleVoucher() {return By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div/table/tbody/tr[1]/td[1]");}

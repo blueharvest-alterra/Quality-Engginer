@@ -1,6 +1,4 @@
 
-@Ignore
-
 Feature: Article
   As a admin
   I want to manage article

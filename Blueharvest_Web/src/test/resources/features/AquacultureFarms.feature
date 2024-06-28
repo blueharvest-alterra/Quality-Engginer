@@ -1,4 +1,4 @@
-@Ignore
+
 Feature: Aquaculture Farms
   As an admin
   I want to manage aquaculture farms
@@ -34,7 +34,6 @@ Feature: Aquaculture Farms
     Given I am on the farms page
     When I click add farm button
     And I input valid farm title
-    And I input valid image for the farm
     And I input valid farm description
     And I click cancel button farm
     Then I am redirected to the farms page

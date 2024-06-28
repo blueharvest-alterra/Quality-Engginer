@@ -1,4 +1,4 @@
-@Ignore
+
 Feature: Product
   As a admin
   I want to manage product
