@@ -3,7 +3,7 @@ Feature: Delete Article By ArticleID
   I want to delete a Article by its ArticleID
   So that I can remove unnecessary Article data
 
-  @Ignore
+ // @Ignore
   Scenario: User deletes Article by valid PromoID
     Given I set promo API endpoint for deleting Article by ArticleID
     When I send DELETE request to delete Article by ArticleID

@@ -3,7 +3,7 @@ Feature: Delete Farm By FarmID
   I want to delete a farm by its FarmID
   So that I can remove unnecessary farm data
 
-  @Ignore
+  //@Ignore
   Scenario: User deletes farm by valid FarmID
     Given I set farm API endpoint for deleting farm by FarmID
     When I send DELETE request to delete farm by FarmID

@@ -5,27 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399b1694-04b4-4e62-8d39-7b81ef4f6e9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/SignIn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/VoucherPromo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ProductSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/TransactionSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/VoucherPromoSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Product.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Transaction.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/VoucherPromo.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/image/ikanGurame.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/pages/AquacultureFarms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/AquacultureFarmsSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/AquacultureFarms.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serenity.properties" beforeDir="false" afterPath="$PROJECT_DIR$/serenity.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/webdriver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/pages/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/pages/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ArticleSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ArticleSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/DashboardSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/DashboardSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ProductSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/ProductSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/SignInSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Article.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Article.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Dashboard.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Product.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Product.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/SignIn.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Transaction.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Transaction.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/VoucherPromo.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/VoucherPromo.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/webdriver/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,24 +59,19 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FR-Web-Article&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kayiin/Documents/A. Studi Independen/Quality-Engginer/Blueharvest_Web&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Alterra/Capstone/API/Blueharvest-API/Blueharvest_Web/src/test/resources/webdriver&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Alterra\Capstone\API\Blueharvest-API\Blueharvest_Web\src\test\resources\webdriver" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources/image" />
       <recent name="$PROJECT_DIR$/Blueharvest_Web/src/test/resources/webdriver" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-be841094" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

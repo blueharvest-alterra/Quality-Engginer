@@ -14,9 +14,9 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class EditFarmByFarmID {
-    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/f1d55285-f1b3-42cd-aa15-5456ba6b9a6f";
+    private static String correctUrl = "https://blueharvest.irvansn.com/v1/farms/ac854a7c-b575-45dd-b66c-c22181078a03";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/invalid-farms";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
     @Step("I set farm API endpoint for editing farm by FarmID")
     public String setApiEndpoint() {
@@ -30,21 +30,25 @@ public class EditFarmByFarmID {
 
     @Step("I send PUT request to edit farm by FarmID with valid authorization and data")
     public void sendEditFarmRequestWithValidData() {
-        // Create JSON part
-        JSONObject requestBody = new JSONObject();
-        requestBody.put("title", "this is update test title");
-        requestBody.put("description", "this is update test description");
-
         // Load sample file
         File sampleFile = new File("src/test/java/starter/user/picture/Ikan.jpeg");
+        if (!sampleFile.exists()) {
+            throw new RuntimeException("File not found: " + sampleFile.getAbsolutePath());
+        }
 
         // Send PUT request with multipart form data
         SerenityRest.given()
-                .header("Authorization", "Bearer " + TOKEN).multiPart("title", "this is update test title")
+                .header("Authorization", "Bearer " + TOKEN)
+                .multiPart("title", "this is update test title")
                 .multiPart("description", "this is update test description")
                 .multiPart("picture_file", sampleFile)
-                .put(setApiEndpoint());
+                .when()
+                .put(setApiEndpoint())
+                .then()
+                .statusCode(200)  // Expecting status code 200 for successful request
+                .log().all();  // Log all details of the request and response
     }
+
 
     @Step("I send PUT request to edit farm without providing FarmID")
     public void sendEditFarmRequestWithMissingFarmID() {

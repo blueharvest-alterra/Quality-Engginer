@@ -3,7 +3,10 @@ package starter.user.address;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.annotations.Step;
 import org.hamcrest.Matchers;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -13,7 +16,7 @@ public class GetAllCities {
     private static final String VALID_STATE_ID = "11";
     private static final String INVALID_STATE_ID = "https://blueharvest.irvansn.com/v1/addressess/citiess/invalid";
 
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
 
     @Step("I set API endpoint for retrieving all cities for a specific state")
@@ -56,6 +59,9 @@ public class GetAllCities {
             response.body("status", equalTo(true));
             response.body("message", equalTo("get all state successfully"));
             response.body("data.cities", Matchers.notNullValue());
+            JsonSchemaHelper helper = new JsonSchemaHelper();
+            String schema = helper.getResponseSchema(JsonSchema.GET_ALL_CITIES);
+            restAssuredThat(schemaValidator -> schemaValidator.body(matchesJsonSchema(schema)));
         });
     }
 

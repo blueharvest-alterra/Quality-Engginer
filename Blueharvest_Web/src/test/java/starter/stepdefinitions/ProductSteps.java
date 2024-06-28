@@ -39,7 +39,7 @@ public class ProductSteps extends PageObject {
 
     @And("I input valid stock")
     public void inputValidStock() {
-        product.inputProductStock(10);
+        product.inputProductStock();
     }
 
     @And("I input valid price")
@@ -47,7 +47,7 @@ public class ProductSteps extends PageObject {
         product.inputProductPrice(40000);
     }
 
-    @And("I input valid description")
+    @And("I input valid description product")
     public void inputValidDescription() {
         product.inputProductDescription("Gurame segar yang dipelihara dengan baik, tersedia dalam berbagai ukuran dan siap untuk dikirim langsung ke rumah Anda. Ikan ini memiliki daging putih lembut dan kaya akan nutrisi, cocok untuk diolah menjadi berbagai hidangan lezat seperti bakar, goreng, atau soup.");
     }
@@ -55,7 +55,7 @@ public class ProductSteps extends PageObject {
 
     @And("I input valid image")
     public void inputValidImage() {
-        product.inputProductImage("/Users/kayiin/Documents/A. Studi Independen/Quality-Engginer/Blueharvest_Web/src/test/resources/image/ikanGurame.jpg");
+        product.inputProductImage("F:\\Alterra\\Capstone\\API\\Blueharvest-API\\Blueharvest_Web\\src\\test\\resources\\image\\ikanGurame.jpg");
     }
 
     @And("I click save button")

@@ -3,7 +3,7 @@ Feature: Delete Promo By PromoID
   I want to delete a promo by its PromoID
   So that I can remove unnecessary promo data
 
-  @Ignore
+  //@Ignore
   Scenario: User deletes promo by valid PromoID
     Given I set promo API endpoint for deleting promo by PromoID
     When I send DELETE request to delete promo by PromoID

@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 public class GetFarmByFarmID {
     private static final String VALID_URL = "https://blueharvest.irvansn.com/v1/farms";
     private static final String INVALID_URL = "https://blueharvest.irvansn.com/v1/farms/invalid";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
     @Step("I set farm API endpoint for get farm by FarmID")
     public String setFarmApiEndpointForFarmByID() {
@@ -29,7 +29,7 @@ public class GetFarmByFarmID {
     public void sendGetRequestToGetFarmByID() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
-                .get(setFarmApiEndpointForFarmByID() + "/f1d55285-f1b3-42cd-aa15-5456ba6b9a6f");
+                .get(setFarmApiEndpointForFarmByID() + "/33fc9817-1be1-4512-baf9-e679dcdbde46");
     }
 
     @Step("I send GET request to get farm by missing FarmID")
@@ -43,7 +43,7 @@ public class GetFarmByFarmID {
     public void sendGetRequestToGetFarmByInvalidID() {
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
-                .get(setFarmApiEndpointForFarmByID() + "/f1d55285-f1b3-42cd-aa15-5456ba6b9a6l");
+                .get(setFarmApiEndpointForFarmByID() + "/00000000-ffe7-0000-9d0f-42b422f00000");
     }
 
 

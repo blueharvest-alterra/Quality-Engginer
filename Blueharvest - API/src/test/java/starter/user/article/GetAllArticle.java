@@ -1,7 +1,12 @@
 package starter.user.article;
 
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.annotations.Step;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.*;
 
@@ -10,7 +15,7 @@ public class GetAllArticle {
     private static final String BASE_URL = "https://blueharvest.irvansn.com/v1/articles";
     private static final String BASE_INVALID_URL = "https://blueharvest.irvansn.com/v1/articles/invalid";
     private static final String UNAUTHORIZED_URL = "https://blueharvest.irvansn.com/v1/articles/unauthorized";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
 
     @Step("I set API endpoint for retrieving all articles")
@@ -54,11 +59,34 @@ public class GetAllArticle {
                 .log().all();
     }
 
-    @Step("I receive valid article list data")
+    @Step("I receive valid farm creation data")
     public void receiveValidArticleListData() {
-        restAssuredThat(response -> response.statusCode(200));
-        restAssuredThat(response -> response.body("status", equalTo(true)));
-        restAssuredThat(response -> response.body("data", notNullValue()));
+        Response response = SerenityRest.lastResponse();
+
+        // Log the entire response for debugging
+        response.prettyPrint();
+
+        // Basic response validations
+        restAssuredThat(resp -> resp.statusCode(200));
+        restAssuredThat(resp -> resp.body("status", equalTo(true)));
+        restAssuredThat(resp -> resp.body("message", equalTo("Success get all article data!")));
+
+        // Validate the articles array and its items
+        restAssuredThat(resp -> resp.body("data.articles", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles.size()", greaterThan(0)));
+        restAssuredThat(resp -> resp.body("data.articles[0].id", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].admin_id", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].author", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].title", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].content", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].picture", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].created_at", notNullValue()));
+        restAssuredThat(resp -> resp.body("data.articles[0].updated_at", notNullValue()));
+
+
+        JsonSchemaHelper helper = new JsonSchemaHelper();
+        String schema = helper.getResponseSchema(JsonSchema.GET_ALL_ARTICLE);
+        restAssuredThat(resp -> resp.body(matchesJsonSchema(schema)));
     }
 
     @Step("I receive an error message about unauthorized access")

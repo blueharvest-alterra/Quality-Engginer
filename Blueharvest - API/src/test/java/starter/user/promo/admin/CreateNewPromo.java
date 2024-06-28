@@ -4,14 +4,17 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
+import starter.utils.JsonSchema;
+import starter.utils.JsonSchemaHelper;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class CreateNewPromo {
     private static String correctUrl = "https://blueharvest.irvansn.com/v1/promos";
     private static String wrongUrl = "https://blueharvest.irvansn.com/v1/promos/invalid";
-    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ2NzM1MDk2fQ.izQFa8-entjBY18hQeRnS0Y4pYttxRddBhdlax4Z1M0";
+    private static final String TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6ImIwMWI0ZjkwLWEyNGYtNDc4YS1hYTQ1LTM4MTM1YWMyNDIwYiIsIkVtYWlsIjoiaXJ2YW4tc3VyeWEtYWRtaW4tMkBibHVlaGFydmVzdC5jb20iLCJGdWxsTmFtZSI6IklydmFuIiwiUm9sZSI6ImFkbWluIiwiZXhwIjo0MzQ3MDgwOTM2fQ.Msmd5l0mMjnXFk4B07Ue6KLqSHnmtp5429PlkW21Yao";
 
     @Step("I set API endpoint for creating a new promo")
     public String setApiEndpoint() {
@@ -42,9 +45,9 @@ public class CreateNewPromo {
     public void sendCreatePromoRequestWithMissingRequiredFields() {
         JSONObject requestBody = new JSONObject();
         requestBody.put("name", "");
-        requestBody.put("code", "");
-        requestBody.put("status", "");
-        requestBody.put("amount", "" );
+        requestBody.put("code", "this test code");
+        requestBody.put("status", "available");
+        requestBody.put("amount", 35000);
 
         SerenityRest.given()
                 .header("Authorization", "Bearer " + TOKEN)
@@ -78,6 +81,10 @@ public class CreateNewPromo {
         restAssuredThat(response -> response.body("data.code", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.status", Matchers.notNullValue()));
         restAssuredThat(response -> response.body("data.amount", Matchers.notNullValue()));
+
+        JsonSchemaHelper helper = new JsonSchemaHelper();
+        String schema = helper.getResponseSchema(JsonSchema.CREATE_NEW_PROMO);
+        restAssuredThat(schemaValidator -> schemaValidator.body(matchesJsonSchema(schema)));
     }
 
     @Step("I receive status code 400 for unauthorized access")
@@ -87,7 +94,7 @@ public class CreateNewPromo {
 
     @Step("I receive an error promo message about unauthorized access")
     public void receiveErrorPromoMessageUnauthorizedAccess() {
-        restAssuredThat(response -> response.body("message", equalTo("Unauthorized")));
+        restAssuredThat(response -> response.body("message", equalTo("input cannot be empty")));
     }
 
     @Step("I receive status code 404 for invalid endpoint")
