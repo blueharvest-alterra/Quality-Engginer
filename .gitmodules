@@ -1,0 +1,3 @@
+[submodule "Blueharvest_Mobile"]
+    path = Blueharvest_Mobile
+    url = https://github.com/nadirbasalamah/mobile-testing-appium-cucumber-js-starter

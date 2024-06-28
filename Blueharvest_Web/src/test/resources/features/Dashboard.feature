@@ -1,4 +1,4 @@
-@Ignore
+
 
 Feature: Dashboard Functionality
   As a user
