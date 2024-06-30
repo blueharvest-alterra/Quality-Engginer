@@ -15,9 +15,9 @@ Blueharvest is an e-commerce platform dedicated to selling fish and providing fi
 - BDD Frameworks - Cucumber Test Suite, Serenity BDD
 
 ## Test Results
-- API Testing: On progress.
-- Web Testing: On progress.
-- Mobile Testing: On progress.
+- API Testing: 130 of 133 test success
+- Web Testing: 41 of 59 test success
+- Mobile Testing: 4 of 5 test success
 
 ## Setup
 To use this project locally, follow these steps:
